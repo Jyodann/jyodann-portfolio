@@ -1,0 +1,11 @@
+---
+title: About
+layout: layout.vto
+templateEngine: [vto, md]
+---
+
+This page was created in {{ date }}
+
+{{for page of search.pages("type=categories")}}
+    <a href="{{page.url}}">{{page.title}}</a>
+{{/for}}

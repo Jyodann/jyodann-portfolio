@@ -1,17 +1,24 @@
 ---
-title: This is my site
+title: Jyodann
 templateEngine: [vto, md]
+isHome: true
 ---
 
 <div class="justify-center flex items-center h-full">
-    <div class="flex flex-col items-center gap-4">
-        <img src="logo.jpeg" class="rounded-full" />
+    <div class="flex flex-col items-center gap-y-2">
+        <img src="logo.jpeg" class="rounded-full" height="256" width="256"/>
         <div class="text-4xl">
             hi there, i'm jordan!
         </div>
 
+        <div class="flex gap-x-2 text-xl">
+            {{for link of links}}      
+                <a href="{{link.url}}">{{ link.name }} </a>
+            {{ /for }}       
+        </div>
 
+        <div>
+            sometimes i write software, sometimes i sleep, sometimes i write software in my sleep 
+        </div>
     </div>
-
-
 </div>

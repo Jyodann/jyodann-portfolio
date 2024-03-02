@@ -1,3 +1,7 @@
+---
+isHome: false
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +12,9 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body class="bg-yellow-50 flex flex-col h-screen">
-
-  {{ comp.navigation_bar({ text: "Login"})}}
+<body class="bg-yellow-50 flex flex-col h-screen font-thin font-sans">
+  
+  {{ comp.navigation_bar({ isHome: isHome})}}
   <div class="flex flex-grow justify-center">
     <div class="w-3/4">
       {{ content }}

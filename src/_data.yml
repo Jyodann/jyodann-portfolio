@@ -1,1 +1,11 @@
 layout: layout.vto
+isHome: false
+links:
+  - name: github
+    url: https://github.com/jyodann
+  - name: itch
+    url: https://jyodann.itch.io/
+  - name: email
+    url: 'mailto:jordynwinnie@gmail.com'
+  - name: youtube
+    url: 'https://www.youtube.com/@Jyodann'
