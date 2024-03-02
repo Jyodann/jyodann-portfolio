@@ -1,0 +1,6 @@
+description:
+type: project
+templateEngine:
+  - vto
+  - md
+layout: post.vto

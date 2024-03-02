@@ -1,0 +1,15 @@
+---
+layout: layout.vto
+---
+<div class="flex justify-center flex-col gap-y-4">
+    <img class="w-full py-4" src="{{top_img}}">
+    <p class="text-4xl font-semibold">{{title}}</p>
+    <div class="flex items-center gap-x-2">
+        {{for item of built_with}}
+        <img alt="{{item}}" height="32" src="/assets/svg/{{item}}.svg" inline>
+        {{/for }}
+    </div>
+    <p class="italic text-2xl"> {{description}} </p>
+
+    <div class="text-xl"> {{content}} </div>
+</div>

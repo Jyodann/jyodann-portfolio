@@ -7,12 +7,9 @@
             <a class="text-2xl font-bold px-2">Jyodann</a>
         </div>
         <div class="flex gap-4">
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
+            {{for page of search.pages("type=toplevel")}}
+                <a class="no-underline text-black" href="{{page.url}}">{{page.nav_label}}</a>
+            {{/for}}
         </div>
-
-
     </div>
 </nav>
