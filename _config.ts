@@ -3,7 +3,8 @@ import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
 import inline from "lume/plugins/inline.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
-
+import picture from "lume/plugins/picture.ts";
+import transformImages from "lume/plugins/transform_images.ts";
 
 const site = lume(
     {
@@ -11,9 +12,11 @@ const site = lume(
         dest: "./output"
     }
 );
+
 site.use(inline())
 site.use(minifyHTML())
 site.use(tailwindcss())
 site.use(postcss())
-site.copy("./assets/img", "./assets/img")
+site.use(picture());
+site.use(transformImages());
 export default site;
