@@ -8,15 +8,16 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body class="bg-yellow-50">
+<body class="bg-yellow-50 flex flex-col h-screen">
+
   {{ comp.navigation_bar({ text: "Login"})}}
-
-  <div class="flex justify-center">
+  <div class="flex flex-grow justify-center">
     <div class="w-3/4">
-
       {{ content }}
     </div>
   </div>
+
+  {{ comp.footer() }}  
 </body>
 
 </html>
