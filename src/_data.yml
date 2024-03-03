@@ -9,3 +9,10 @@ links:
     url: 'mailto:jordynwinnie@gmail.com'
   - name: youtube
     url: 'https://www.youtube.com/@Jyodann'
+
+metas:
+  site: Jyodann's Website
+  twitter: "@jyodann"
+  icon: /img/icon.png
+  lang: en
+  generator: true

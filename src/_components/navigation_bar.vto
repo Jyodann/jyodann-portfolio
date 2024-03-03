@@ -2,9 +2,9 @@
     <div class="w-3/4 flex justify-between items-center py-4">
         <div class="flex items-center">
             {{if !isHome}}
-            <img class="rounded-full" width="32" height="32" src="https://avatars.githubusercontent.com/u/48559311?v=4">
+            <img alt="Jyodann's Profile Picture" class="rounded-full" width="32" height="32" src="https://avatars.githubusercontent.com/u/48559311?v=4">
             {{/if}}
-            <a class="text-2xl font-bold px-2">Jyodann</a>
+            <a class="text-2xl font-bold px-2 no-underline text-black" href="/">Jyodann</a>
         </div>
         <div class="flex gap-4">
             {{for page of search.pages("type=toplevel")}}

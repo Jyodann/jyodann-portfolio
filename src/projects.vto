@@ -6,4 +6,19 @@ templateEngine:
   - vto
   - md
 ---
-Page content
+
+{{ for year of [2023, 2022, 2021, 2020, 2019]}}
+    <p>{{ year }}</p>
+
+    {{ for project of search.pages("year=" + year)}}
+
+  
+     <p> {{project.title}} - {{project.date.getFullYear()}} </p>
+    {{ /for }}
+{{ /for }}
+
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+
+
+</div>
+
