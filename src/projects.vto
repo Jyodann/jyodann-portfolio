@@ -2,23 +2,30 @@
 title: projects
 nav_label: projects
 type: toplevel
+layout: nav_page_base.vto
 templateEngine:
-  - vto
-  - md
+- vto
+- md
 ---
 
-{{ for year of [2023, 2022, 2021, 2020, 2019]}}
-    <p>{{ year }}</p>
+{{ for year of project_years}}
+<p class="font-bold py-2">{{ year }}</p>
 
-    {{ for project of search.pages("year=" + year)}}
+<div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+  {{ for project of search.pages("year=" + year)}}
+  <div class="rounded-md overflow-hidden shadow-sm bg-white">
+    {{if project.top_img}}
 
-  
-     <p> {{project.title}} - {{project.date.getFullYear()}} </p>
-    {{ /for }}
-{{ /for }}
+    <img class="w-full" alt="{{project.title}}'s Cover Image" transform-images="avif webp jpg 300@2" src="{{project.top_img}}">
+    {{ /if}}
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div class="p-4"> 
+      <div class="font-bold text-xl">{{ project.title }}</div>
+      <div class="text-gray-600"> {{project.date.toLocaleDateString()}} </div>
+      {{project.description}}
+    </div>
+  </div>
 
-
+  {{ /for }}
 </div>
-
+{{ /for }}
