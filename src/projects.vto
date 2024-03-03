@@ -5,27 +5,14 @@ type: toplevel
 layout: nav_page_base.vto
 templateEngine:
 - vto
-- md
 ---
 
 {{ for year of project_years}}
-<p class="font-bold py-2">{{ year }}</p>
 
+<p class="text-xl font-bold py-2"> {{year}} </p>
 <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
   {{ for project of search.pages("year=" + year)}}
-  <div class="rounded-md overflow-hidden shadow-sm bg-white">
-    {{if project.top_img}}
-
-    <img class="w-full" alt="{{project.title}}'s Cover Image" transform-images="avif webp jpg 300@2" src="{{project.top_img}}">
-    {{ /if}}
-
-    <div class="p-4"> 
-      <div class="font-bold text-xl">{{ project.title }}</div>
-      <div class="text-gray-600"> {{project.date.toLocaleDateString()}} </div>
-      {{project.description}}
-    </div>
-  </div>
-
+  {{ comp.card({project: project})}}
   {{ /for }}
 </div>
 {{ /for }}
