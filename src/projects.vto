@@ -11,7 +11,7 @@ templateEngine:
 
 <p class="text-xl font-bold py-2"> {{year}} </p>
 <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-  {{ for project of search.pages("year=" + year)}}
+  {{ for project of search.pages("year=" + year, "date=desc")}}
   {{ comp.card({project: project})}}
   {{ /for }}
 </div>
