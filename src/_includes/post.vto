@@ -9,7 +9,7 @@ layout: layout.vto
     <p class="text-4xl font-semibold">{{title}}</p>
     <div class="flex items-center gap-x-2">
         {{for item of built_with}}
-        <img alt="{{item}}" height="32" src="/assets/svg/{{item}}.svg" inline>
+        <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none"  height="48" width="48" class="object-contain" src="/assets/svg/{{item}}.svg" inline>
         {{/for }}
     </div>
     <p class="italic text-2xl"> {{description}} </p>
