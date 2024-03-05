@@ -5,7 +5,7 @@ templateEngine: vto
 <a href="{{project.url}}" class="text-black no-underline rounded-md overflow-auto shadow-md bg-white flex flex-col justify-between">
 
     {{if project.top_img}}
-    <img class="w-full h-48 object-cover" alt="{{project.title}}'s Cover Image" transform-images="avif webp jpg 300@2"
+    <img class="w-full h-48 object-contain" alt="{{project.title}}'s Cover Image" transform-images="avif webp jpg 300@2"
         src="/assets/img/{{project.top_img}}">
     {{ /if}}
 
