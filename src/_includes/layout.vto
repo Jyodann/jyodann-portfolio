@@ -13,15 +13,16 @@ isHome: false
 </head>
 
 <body class="bg-yellow-50 flex flex-col h-screen font-sans">
-  
+
   {{ comp.navigation_bar({ isHome: isHome})}}
   <div class="flex flex-grow justify-center">
-    <div class="w-3/4 lg:w-3/5">
+    <div class="container mx-auto xl:px-80 lg:px-48 md:px-24 px-4">
       {{ content }}
     </div>
   </div>
 
   {{ comp.footer() }}  
+
 </body>
 
 </html>

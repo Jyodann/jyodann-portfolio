@@ -2,18 +2,21 @@
 project:
 templateEngine: vto
 ---
-<a href="{{project.url}}" class="text-black no-underline rounded-md overflow-auto shadow-md bg-white flex flex-col justify-between">
+{{if project.thumbnail}}
+{{set path = project.thumbnail}}
+{{ else if project.top_img}}
+{{set path = project.top_img}}
+{{/if}}
 
-    {{if project.top_img}}
-    <img class="w-full h-48 object-contain" alt="{{project.title}}'s Cover Image" transform-images="avif webp jpg 300@2"
-        src="/assets/img/{{project.top_img}}">
-    {{ /if}}
+<a href="{{project.url}}"
+    class=" text-black no-underline overflow-auto flex flex-col bg-white shadow-sm items-center">
 
-    <div class="p-2 h-full">
+<img class="object-cover w-full" alt="{{project.title}}'s Cover Image"
+        transform-images="avif webp jpg 480" src="/assets/img/{{path}}">
+    <div class="h-full w-full p-4">
         <div class="font-bold text-xl">{{ project.title }}</div>
         <div class="text-gray-600"> {{project.date.toLocaleDateString("en-GB")}} </div>
-        <div class="line-clamp-3 text-xs">
-
+        <div class="line-clamp-3">
             {{project.description}}
         </div>
     </div>
