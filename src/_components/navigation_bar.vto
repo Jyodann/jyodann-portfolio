@@ -1,16 +1,18 @@
-<nav class="bg-yellow-200 flex justify-center">
+<nav class="bg-yellow-200 dark:bg-slate-800 flex justify-center dark:text-white">
     <div class="container mx-auto xl:px-80 lg:px-48 md:px-24 px-4 flex justify-between items-center py-4">
         <div class="flex items-center">
             {{if !isHome}}
             <img alt="Jyodann's Profile Picture" class="rounded-full" width="32" height="32"
                 src="https://avatars.githubusercontent.com/u/48559311?v=4">
             {{/if}}
-            <a class="text-2xl font-bold px-2 no-underline text-black" href="/">Jyodann</a>
+            <a class="text-2xl font-bold px-2 no-underline text-black dark:text-white" href="/">Jyodann</a>
         </div>
         <div class="flex gap-4">
             {{for page of search.pages("type=toplevel")}}
-            <a class="no-underline text-black" href="{{page.url}}">{{page.nav_label}}</a>
+            <a class="no-underline text-black dark:text-white" href="{{page.url}}">{{page.nav_label}}</a>
             {{/for}}
+
+            <button onclick="sayHello()">theme</button>
         </div>
     </div>
 </nav>

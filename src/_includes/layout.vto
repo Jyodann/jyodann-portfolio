@@ -10,9 +10,30 @@ isHome: false
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jyodann | {{ title }} </title>
   <link rel="stylesheet" href="/styles.css">
+
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    } else {
+      localStorage.theme = 'light'
+      document.documentElement.classList.remove('dark')
+    }
+    function sayHello() {
+      if (localStorage.theme === 'dark') {
+        document.documentElement.classList.remove('dark')
+        localStorage.theme = 'light'
+      } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+      }
+    }
+    
+  </script>
 </head>
 
-<body class="bg-yellow-50 flex flex-col h-screen font-sans">
+<body class="bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen font-sans">
 
   {{ comp.navigation_bar({ isHome: isHome})}}
   <div class="flex flex-grow justify-center">
@@ -21,7 +42,7 @@ isHome: false
     </div>
   </div>
 
-  {{ comp.footer() }}  
+  {{ comp.footer() }}
 
 </body>
 
