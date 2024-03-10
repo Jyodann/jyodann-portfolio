@@ -15,7 +15,7 @@ templateEngine: vto
         transform-images="avif webp jpg 480" src="/assets/img/{{path}}">
     <div class="h-full w-full p-4">
         <div class="font-bold text-xl">{{ project.title }}</div>
-        <div class="text-gray-600"> {{project.date.toLocaleDateString("en-GB")}} </div>
+        <div class="text-gray-600 dark:text-gray-200"> {{project.date.toLocaleDateString("en-GB")}} </div>
         <div class="line-clamp-3">
             {{project.description}}
         </div>
