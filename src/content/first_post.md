@@ -1,5 +1,0 @@
----
-title: First Post
----
-
-Hello!
