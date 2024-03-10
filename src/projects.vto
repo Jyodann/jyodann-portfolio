@@ -7,10 +7,13 @@ templateEngine:
 - vto
 ---
 
+<div>here are some projects i've worked on over the years:</div>
+
 {{ for year of project_years}}
 
-<p class="text-xl font-bold py-2"> {{year}} </p>
-<div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+<p class="text-4xl font-semibold pt-4 text-gray-600"> {{year}} </p>
+<div class="h-1 bg-gray-600 mb-4"></div>
+<div class="grid gap-8 grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
   {{ for project of search.pages("year=" + year, "date=desc")}}
   {{ comp.card({project: project})}}
   {{ /for }}
