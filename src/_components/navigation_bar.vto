@@ -9,7 +9,7 @@
         </div>
         <div class="flex gap-4">
             {{for page of search.pages("type=toplevel")}}
-            <a class="no-underline font-thin text-black" href="{{page.url}}">{{page.nav_label}}</a>
+            <a class="no-underline text-black" href="{{page.url}}">{{page.nav_label}}</a>
             {{/for}}
         </div>
     </div>
