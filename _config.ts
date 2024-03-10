@@ -16,7 +16,12 @@ const site = lume(
 
 site.use(inline())
 site.use(minifyHTML())
-site.use(tailwindcss())
+site.use(tailwindcss({
+    options : {
+        darkMode: 'selector',
+    }
+}
+))
 site.use(postcss())
 site.use(picture());
 site.use(transformImages());

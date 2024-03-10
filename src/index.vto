@@ -14,11 +14,11 @@ isHome: true
 
         <div class="flex gap-x-2 text-xl">
             {{for link of links}}      
-                <a href="{{link.url}}">{{ link.name }} </a>
+                <a target="_blank" href="{{link.url}}">{{ link.name }} </a>
             {{ /for }}       
         </div>
-
-        <div>
+        
+        <div class="text-center">
             sometimes i write software, sometimes i sleep, sometimes i write software in my sleep 
         </div>
     </div>
