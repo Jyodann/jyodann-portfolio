@@ -3,13 +3,13 @@ layout: layout.vto
 ---
 <div class="flex justify-center flex-col gap-y-4">
     {{ if top_img}}
-
-    <img class="w-full py-4" src="/assets/img/{{top_img}}"  transform-images="avif webp jpg"alt="{{title}}'s cover art">
+    <img class="w-full py-4 h-44 object-cover" src="/assets/img/{{top_img}}"  transform-images="avif webp jpg"alt="{{title}}'s cover art">
     {{ /if }}
     <p class="text-4xl font-semibold">{{title}}</p>
     <div class="flex items-center gap-x-2">
+        
         {{for item of built_with}}
-        <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none"  height="48" width="48" class="object-contain" src="/assets/svg/{{item}}.svg" inline>
+        <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none"  height="32" width="32" class="object-contain" src="/assets/svg/{{item}}.svg" inline>
         {{/for }}
     </div>
     <p class="italic text-2xl"> {{description}} </p>
