@@ -5,7 +5,7 @@ export default function (title, date) {
     path: `./content/projects/${checked_date.getFullYear()}/${slug}.vto`,
     content: {
       layout: "post.vto",
-      top_img: "",
+      thumbnail: "",
       title: title,
       content: "Page content",
       date: date,

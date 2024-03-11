@@ -19,6 +19,13 @@ site.use(minifyHTML())
 site.use(tailwindcss({
     options : {
         darkMode: 'selector',
+        theme: {
+            extend: {
+            fontFamily : {
+                outfit : ['Outfit', 'sans-serif'], 
+            },
+           }
+        }
     }
 }
 ))
