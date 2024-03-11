@@ -1,18 +1,28 @@
 ---
 layout: layout.vto
 ---
-<div class="flex justify-center flex-col gap-y-4">
-    {{ if top_img}}
-    <img class="w-full py-4 h-44 object-cover" src="/assets/img/{{top_img}}"  transform-images="avif webp jpg"alt="{{title}}'s cover art">
-    {{ /if }}
-    <p class="text-4xl font-semibold">{{title}}</p>
-    <div class="flex items-center gap-x-2">
-        
+
+{{if cover_img}}
+{{ set img = cover_img}}
+{{ else }}
+{{ set img = thumbnail}}
+{{/if}}
+<div class="flex justify-center flex-col pt-4">
+
+    {{if img}}
+
+    <img class="w-full" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 1200@2">
+    <p class="text-4xl font-semibold py-2">{{title}}</p>
+
+    <p class="text-2xl"> {{description}} </p>
+    {{/if}}
+    <div class="flex items-center gap-x-4 pt-2">
+
         {{for item of built_with}}
-        <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none"  height="32" width="32" class="object-contain" src="/assets/svg/{{item}}.svg" inline>
+        <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none" height="48" width="48"
+            src="/assets/svg/{{item}}.svg" inline>
         {{/for }}
     </div>
-    <p class="italic text-2xl"> {{description}} </p>
 
-    <div class="text-xl"> {{content}} </div>
+    <div class="text-xl pt-4"> {{content}} </div>
 </div>

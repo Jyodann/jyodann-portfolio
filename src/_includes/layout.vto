@@ -9,8 +9,10 @@ isHome: false
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jyodann | {{ title }} </title>
-  <link rel="stylesheet" href="/styles.css">
+  <style>
+  </style>
 
+  <link rel="stylesheet" href="/styles.css">
   <script>
     let dark_icon = null
     let light_icon = null
@@ -51,7 +53,7 @@ isHome: false
   </script>
 </head>
 
-<body class="bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen font-sans">
+<body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
 
   {{ comp.navigation_bar({ isHome: isHome})}}
   <div class="flex flex-grow justify-center">
