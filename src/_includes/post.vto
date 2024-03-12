@@ -1,5 +1,6 @@
 ---
 layout: layout.vto
+quick_links:
 ---
 
 {{if cover_img}}
@@ -14,15 +15,51 @@ layout: layout.vto
     <img class="w-full" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 1200@2">
     <p class="text-4xl font-semibold py-2">{{title}}</p>
 
-    <p class="text-2xl"> {{description}} </p>
+    <p class="text-lg"> {{description}} </p>
     {{/if}}
-    <div class="flex items-center gap-x-4 pt-2">
 
-        {{for item of built_with}}
-        <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none" height="48" width="48"
-            src="/assets/svg/{{item}}.svg" inline>
-        {{/for }}
+    <div class="py-4 w-full">
+        <table class="w-full text-center table table-fixed bg-yellow-200 dark:bg-slate-800 border border-collapse border-black dark:border-white ">
+            <thead class="border border-black dark:border-white ">
+                <tr class="font-bold">
+                    <td class="border border-black dark:border-white  w-1/4">Name</td>
+                    <td class="border border-black dark:border-white ">Property</td>
+                </tr>
+            </thead>
+            <tbody class="bg-yellow-100 dark:bg-slate-700">
+                <tr class="table-row">
+                    <td class="">Date</td>
+                    <td class="border border-black dark:border-white ">
+                       {{date.toLocaleDateString("en-GB")}}
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td class="border border-black dark:border-white ">Built with</td>
+                    <td class="border border-black dark:border-white ">
+                        <div
+                            class="flex align-middle content-center place-content-center items-center gap-x-4 w-full h-full">
+    
+                            {{for item of built_with}}
+                            <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none" height="48" width="48"
+                                src="/assets/svg/{{item}}.svg" inline>
+                            {{/for }}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border border-black dark:border-white ">Quick Links</td>
+                    <td class="border border-black dark:border-white ">
+                        <ul>
+                            {{ for link of quick_links}}
+                            <li> <a target="_blank" href="{{link.url}}">{{link.name}}</a> </li>
+                            {{/for }}
+                        </ul>
+    
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    <div class="text-xl pt-4"> {{content}} </div>
+    
+    <div class="pt-4"> {{content}} </div>
 </div>
