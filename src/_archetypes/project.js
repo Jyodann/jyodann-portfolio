@@ -7,8 +7,14 @@ export default function (title, date) {
       layout: "post.vto",
       thumbnail: "",
       title: title,
-      content: "Page content",
+      content: "",
       date: date,
+      quick_links: [
+        {
+          "name" : "View Source Code on Github",
+          "url" : ""
+        }
+      ]
     },
   };
 }
