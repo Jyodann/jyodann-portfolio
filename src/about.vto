@@ -11,39 +11,54 @@ achievements:
   url: https://www.worldskills.sg/skills/all-champions/-/temasek-polytechnic/it-software-solutions-for-business/gold-award/
 - name: PolyFintech100 API Hackaton 2020 - 2nd Place
   url: https://www.linkedin.com/pulse/polyfintech-100-hackathon-2020-meet-team-agile-tp-the-sandbox/
+
+contacts:
+- name: email
+  url: mailto:hello@jyodann.com
+- name: telegram
+  url: https://t.me/Jyodann
 ---
 
 <div class="flex flex-col">
 
-    <div class="text-justify flex flex-col gap-2">
-        Hi there, I'm Jordan Khong, a software and game developer from Singapore.
-        I enjoy creating small tools that entertain and sometimes help people;
-        I primarily use Godot and Unity with C# as my go-to tools and language,
-        but I am open to using various technologies to explore outside of game development.
+  <div class="text-justify flex flex-col gap-2">
+    Hi there, I'm Jordan Khong, a software and game developer from Singapore.
+    I enjoy creating small tools that entertain and sometimes help people;
+    I primarily use Godot and Unity with C# as my go-to tools and language,
+    but I am open to using various technologies to explore outside of game development.
 
-        I graduated from Temasek Polytechnic in 2022 with a diploma in
-        [Game Design and
-        Development.](https://www.tp.edu.sg/schools-and-courses/students/schools/iit/immersive-media-and-game-development.html)
-        (that's the old name, it changed when I graduated). During my time there, I
-        had the privilege to represent my school and country in a coding competition
-        named [Worldskills](https://worldskills.org/) in the IT Software Solutions
-        for business skillset. I was also a part time teaching assistant for
-        that skillset as well.
+    I graduated from Temasek Polytechnic in 2022 with a diploma in
+    [Game Design and
+    Development.](https://www.tp.edu.sg/schools-and-courses/students/schools/iit/immersive-media-and-game-development.html)
+    (that's the old name, it changed when I graduated). During my time there, I
+    had the privilege to represent my school and country in a coding competition
+    named [Worldskills](https://worldskills.org/) in the IT Software Solutions
+    for business skillset. I was also a part time teaching assistant for
+    that skillset as well.
 
-        In my free time, I enjoy playing games, learning languages and watching YouTube.
-        Some of my favourite games are: [Super Mario Galaxy](https://en.wikipedia.org/wiki/Super_Mario_Galaxy),
-        the Resident Evil Series, particularily [Resident Evil 4](https://en.wikipedia.org/wiki/Resident_Evil_4),
-        and [Chunithm](https://en.wikipedia.org/wiki/Chunithm). I watch YouTube for
-        entertainment, and to keep up to date with tech from those tech YouTubers like
-        [theprimeagen](https://www.youtube.com/c/theprimeagen) and [FireShip](https://www.youtube.com/c/fireship).
-        Finally, I am learning Japanese and Cantonese whenever possible.
-    </div>
-    <p class="text-4xl pt-2">some of my achievements:</p>
+    In my free time, I enjoy playing games, learning languages and watching YouTube.
+    Some of my favourite games are: [Super Mario Galaxy](https://en.wikipedia.org/wiki/Super_Mario_Galaxy),
+    the Resident Evil Series, particularily [Resident Evil 4](https://en.wikipedia.org/wiki/Resident_Evil_4),
+    and [Chunithm](https://en.wikipedia.org/wiki/Chunithm). I watch YouTube for
+    entertainment, and to keep up to date with tech from those tech YouTubers like
+    [theprimeagen](https://www.youtube.com/c/theprimeagen) and [FireShip](https://www.youtube.com/c/fireship).
+    Finally, I am learning Japanese and Cantonese whenever possible.
+  </div>
+  <p class="text-4xl py-4">some of my achievements:</p>
 
-    <ul class="list-disc">
-        {{ for achievement of achievements}}
-        <li class="list-item list-inside py-2"> <a href="{{achievement.url}}" target="_blank">{{ achievement.name}}</a>
-        </li>
-        {{ /for }}
-    </ul>
+  <ul class="list-disc">
+    {{ for achievement of achievements}}
+    <li class="list-item list-inside py-2"> <a href="{{achievement.url}}" target="_blank">{{ achievement.name}}</a>
+    </li>
+    {{ /for }}
+  </ul>
+  <p class="text-4xl py-4">shall we connect?</p>
+  I would be more than happy to answer questions or discuss further opportunities! Feel free to drop me a message
+  on these platforms:
+  <ul class="list-disc">
+    {{ for contact of contacts}}
+    <li class="list-item list-inside py-2"> <a href="{{contact.url}}" target="_blank">{{ contact.name}}</a>
+    </li>
+    {{ /for }}
+  </ul>
 </div>
