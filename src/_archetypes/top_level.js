@@ -7,7 +7,8 @@ export default function (title) {
       title: title,
       nav_label: title,
       content: "Page content",
-      type: "toplevel",
+      type: "",
+      layout: "nav_page_base.vto",
       templateEngine: ["vto", "md"]
     },
   };

@@ -2,18 +2,19 @@
     <div class="container mx-auto xl:px-80 lg:px-48 md:px-24 px-4 flex justify-between items-center py-4">
         <div class="flex items-center">
             {{if !isHome}}
-            <img alt="Jyodann's Profile Picture" class="rounded-full" width="32" height="32"
-                src="https://avatars.githubusercontent.com/u/48559311?v=4">
+            <img alt="Jyodann's Profile Picture" width="32" height="32"
+                src="{{profile_photo}}">
             {{/if}}
             <a class="text-2xl font-bold px-2 no-underline text-black dark:text-white" href="/">Jyodann</a>
         </div>
         <div class="flex gap-4">
-            <a onclick="change_theme()">
+            <a id="theme_switcher">
                 <img class="hidden" id="theme_dark" src="/assets/svg/dark.svg" inline />
                 <img class="hidden" id="theme_light" src="/assets/svg/light.svg" inline />
             </a>
             {{for page of search.pages("type=toplevel")}}
-            <a class="no-underline text-black dark:text-white" href="{{page.url}}">{{page.nav_label}}</a>
+            
+            <a class=" text-black dark:text-white {{if page.nav_label == page_name}} underline {{else}} no-underline {{/if}}" href="{{page.url}}">{{page.nav_label}}</a>
             {{/for}}
 
         </div>

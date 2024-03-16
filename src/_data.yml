@@ -32,3 +32,5 @@ metas:
   icon: /img/icon.png
   lang: en
   generator: true
+
+profile_photo: '/assets/img/favicon.png'

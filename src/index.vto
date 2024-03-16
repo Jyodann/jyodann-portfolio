@@ -1,37 +1,36 @@
 ---
 title: Home
 name: Home
-templateEngine: [vto, md]
+templateEngine: [md, vto]
 isHome: true
 ---
 
 <div class="justify-center flex items-center h-full">
-    <div class="flex flex-col items-center gap-y-2">
-        <img src="assets/img/logo.jpeg" class="rounded-full" height="256" width="256" />
-        <div class="text-4xl">
+    <div class="flex flex-col items-center">
+        <img src="{{profile_photo}}" height="256" width="256" />
+        <div class="text-4xl py-2">
             hi there, i'm jordan!
         </div>
-
         <div class="flex gap-x-2 text-xl">
             {{for link of links}}
             <a target="_blank" href="{{link.url}}">{{ link.name }} </a>
             {{ /for }}
         </div>
-
-        <div class="text-center">
-            sometimes i write software, sometimes i sleep, sometimes i write software in my sleep
+        <div class="text-center py-2">
+            sometimes i write software, 
+            sometimes i sleep, 
+            sometimes i write software in my sleep
         </div>
-
         <details class="select-none w-full">
             <summary>
                 <div class="flex items-center justify-center">
-                    <span class="icon dark:fill-white"><img src="/assets/svg/expand.svg" inline height="40"></span>
+                    <span class="icon dark:fill-white"><img src="/assets/svg/expand.svg" inline height="50"></span>
                 </div>
             </summary> 
         </details>
         <div class="content">
-            <p class="text-4xl py-4 text-center">about me:</p>
-            <div class="flex flex-col px-8">
+            <p class="text-4xl text-center pb-4">about me:</p>
+            <div class="flex flex-col">
                 <div class="text-justify flex flex-col gap-2">
                     Hi there, I'm Jordan Khong, a software and game developer from Singapore.
                     I enjoy creating small tools that entertain and sometimes help people;
@@ -62,7 +61,7 @@ isHome: true
 
                 <ul class="list-disc">
                     {{ for achievement of achievements}}
-                    <li class="list-item list-inside py-2"> <a href="{{achievement.url}}" target="_blank">{{
+                    <li class="list-item list-inside pb-2"> <a href="{{achievement.url}}" target="_blank">{{
                             achievement.name}}</a>
                     </li>
                     {{ /for }}
@@ -73,7 +72,7 @@ isHome: true
                 on these platforms:
                 <ul class="list-disc">
                     {{ for contact of contacts}}
-                    <li class="list-item list-inside py-2"> <a href="{{contact.url}}" target="_blank">{{
+                    <li class="list-item list-inside pb-2"> <a href="{{contact.url}}" target="_blank">{{
                             contact.name}}</a>
                     </li>
                     {{ /for }}
