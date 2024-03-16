@@ -3,7 +3,7 @@ isHome: false
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
@@ -11,46 +11,12 @@ isHome: false
   <title>Jyodann | {{ title }} </title>
   <style>
   </style>
-
   <link rel="stylesheet" href="/styles.css">
-  <script>
-    let dark_icon = null
-    let light_icon = null
-    window.addEventListener('DOMContentLoaded', (ev) => {
-      dark_icon = document.getElementById("theme_dark")
-      light_icon = document.getElementById("theme_light")
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-        localStorage.theme = 'dark'
-      } else {
-        localStorage.theme = 'light'
-        document.documentElement.classList.remove('dark')
-      }
-      update_icon(localStorage.theme)
-    })
-    function update_icon(current_theme) {
-      if (current_theme === 'dark') {
-        dark_icon.classList.add("hidden")
-        light_icon.classList.remove("hidden")
-      } else {
-        dark_icon.classList.remove("hidden")
-        light_icon.classList.add("hidden")
-      }
-    }
+  <script src="/assets/code/theme_switcher.js">  </script>
+</head>
 
-    function change_theme() {
-      if (localStorage.theme === 'dark') {
-        document.documentElement.classList.remove('dark')
-        localStorage.theme = 'light'
-      } else {
-        localStorage.theme = 'dark'
-        document.documentElement.classList.add('dark')
-      }
+<body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
 
-      update_icon(localStorage.theme)
-    }
-  </script>
 </head>
 
 <body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
