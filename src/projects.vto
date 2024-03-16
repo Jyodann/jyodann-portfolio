@@ -9,11 +9,18 @@ templateEngine:
 
 <div>here are some projects i've worked on over the years:</div>
 
+{{ for project of nav.menu("/projects/")}}
+    {{console.log(project.data)}}
+{{ /for }}
+
 {{ for year of project_years}}
 
 <p class="text-4xl font-semibold pt-4 text-gray-600 dark:text-gray-200"> {{year}} </p>
 <div class="h-1 bg-gray-600 dark:bg-gray-200 mb-4"></div>
 <div class="grid gap-8 grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+  
+
+
   {{ for project of search.pages("year=" + year, "date=desc")}}
   {{ comp.card({project: project})}}
   {{ /for }}

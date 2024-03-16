@@ -55,7 +55,7 @@ isHome: false
 
 <body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
 
-  {{ comp.navigation_bar({ isHome: isHome})}}
+  {{ comp.navigation_bar({ isHome: isHome, page_name: basename})}}
   <div class="flex flex-grow justify-center">
     <div class="container mx-auto xl:px-80 lg:px-48 md:px-24 px-4 py-4">
       {{ content }}

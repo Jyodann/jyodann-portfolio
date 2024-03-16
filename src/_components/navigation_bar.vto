@@ -13,7 +13,8 @@
                 <img class="hidden" id="theme_light" src="/assets/svg/light.svg" inline />
             </a>
             {{for page of search.pages("type=toplevel")}}
-            <a class="no-underline text-black dark:text-white" href="{{page.url}}">{{page.nav_label}}</a>
+            
+            <a class=" text-black dark:text-white {{if page.nav_label == page_name}} underline {{else}} no-underline {{/if}}" href="{{page.url}}">{{page.nav_label}}</a>
             {{/for}}
 
         </div>
