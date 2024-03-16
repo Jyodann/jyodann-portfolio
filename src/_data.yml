@@ -5,13 +5,13 @@ links:
     url: https://github.com/jyodann
   - name: itch
     url: https://jyodann.itch.io/
+  - name: youtube
+    url: 'https://www.youtube.com/@Jyodann'
   - name: email
     url: 'mailto:hello@jyodann.com'
   - name: telegram
     url: https://t.me/Jyodann
-  - name: youtube
-    url: 'https://www.youtube.com/@Jyodann'
-
+  
 project_years: [2024, 2023, 2022, 2021, 2020, 2016]
 metas:
   site: Jyodann's Website
