@@ -1,6 +1,8 @@
 description: Default
-type: project
+tags: 
+  - project
 templateEngine:
   - vto
   - md
 layout: post.vto
+basename: ""
