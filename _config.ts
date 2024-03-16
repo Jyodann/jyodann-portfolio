@@ -8,6 +8,7 @@ import transformImages from "lume/plugins/transform_images.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import metas from "lume/plugins/metas.ts";
 import nav from "lume/plugins/nav.ts";
+import favicon from "lume/plugins/favicon.ts";
 const site = lume(
     {
         src: "./src",
@@ -36,4 +37,9 @@ site.use(picture());
 site.use(transformImages());
 site.use(metas());
 site.use(codeHighlight());
+site.use(favicon(
+    {
+        input: "./assets/img/favicon.png"
+    }
+));
 export default site;
