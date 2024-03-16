@@ -7,19 +7,78 @@ isHome: true
 
 <div class="justify-center flex items-center h-full">
     <div class="flex flex-col items-center gap-y-2">
-        <img src="assets/img/logo.jpeg" class="rounded-full" height="256" width="256"/>
+        <img src="assets/img/logo.jpeg" class="rounded-full" height="256" width="256" />
         <div class="text-4xl">
             hi there, i'm jordan!
         </div>
 
         <div class="flex gap-x-2 text-xl">
-            {{for link of links}}      
-                <a target="_blank" href="{{link.url}}">{{ link.name }} </a>
-            {{ /for }}       
+            {{for link of links}}
+            <a target="_blank" href="{{link.url}}">{{ link.name }} </a>
+            {{ /for }}
         </div>
-        
+
         <div class="text-center">
-            sometimes i write software, sometimes i sleep, sometimes i write software in my sleep 
+            sometimes i write software, sometimes i sleep, sometimes i write software in my sleep
+        </div>
+
+        <details class="select-none w-full">
+            <summary>
+                <div class="flex items-center justify-center">
+                    <span class="icon"><img src="/assets/svg/expand.svg" inline height="40"></span>
+                </div>
+            </summary> 
+        </details>
+        <div class="content">
+            <p class="text-4xl py-4 text-center">about me:</p>
+            <div class="flex flex-col px-8">
+                <div class="text-justify flex flex-col gap-2">
+                    Hi there, I'm Jordan Khong, a software and game developer from Singapore.
+                    I enjoy creating small tools that entertain and sometimes help people;
+                    I primarily use Godot and Unity with C# as my go-to tools and language,
+                    but I am open to using various technologies to explore outside of game development.
+
+                    I graduated from Temasek Polytechnic in 2022 with a diploma in
+                    [Game Design and
+                    Development.](https://www.tp.edu.sg/schools-and-courses/students/schools/iit/immersive-media-and-game-development.html)
+                    (that's the old name, it changed when I graduated). During my time there, I
+                    had the privilege to represent my school and country in a coding competition
+                    named [Worldskills](https://worldskills.org/) in the IT Software Solutions
+                    for business skillset. I was also a part time teaching assistant for
+                    that skillset as well.
+
+                    In my free time, I enjoy playing games, learning languages and watching YouTube.
+                    Some of my favourite games are: [Super Mario
+                    Galaxy](https://en.wikipedia.org/wiki/Super_Mario_Galaxy),
+                    the Resident Evil Series, particularily [Resident Evil
+                    4](https://en.wikipedia.org/wiki/Resident_Evil_4),
+                    and [Chunithm](https://en.wikipedia.org/wiki/Chunithm). I watch YouTube for
+                    entertainment, and to keep up to date with tech from those tech YouTubers like
+                    [theprimeagen](https://www.youtube.com/c/theprimeagen) and
+                    [FireShip](https://www.youtube.com/c/fireship).
+                    Finally, I am learning Japanese and Cantonese whenever possible.
+                </div>
+                <p class="text-4xl py-4 text-center">some of my achievements:</p>
+
+                <ul class="list-disc">
+                    {{ for achievement of achievements}}
+                    <li class="list-item list-inside py-2"> <a href="{{achievement.url}}" target="_blank">{{
+                            achievement.name}}</a>
+                    </li>
+                    {{ /for }}
+                </ul>
+                <p class="text-4xl py-4 text-center w-full">shall we connect?</p>
+                I would be more than happy to answer questions or discuss further opportunities! Feel free to drop me a
+                message
+                on these platforms:
+                <ul class="list-disc">
+                    {{ for contact of contacts}}
+                    <li class="list-item list-inside py-2"> <a href="{{contact.url}}" target="_blank">{{
+                            contact.name}}</a>
+                    </li>
+                    {{ /for }}
+                </ul>
+            </div>
         </div>
     </div>
 </div>
