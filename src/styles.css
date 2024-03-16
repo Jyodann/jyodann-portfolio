@@ -18,5 +18,41 @@
   }
 }
 
+summary {
+ display: block; /* This hides the summary's ::marker pseudo-element */
+}
+summary::-webkit-details-marker {
+ display: none; /* This also hides the ::marker pseudo-element, but in Safari */
+}
+
+details[open] summary span.icon {
+  transform: rotate(180deg);
+}
+
+details[open] + div.content {
+ max-height: 1000px; /* Set a max-height value enough to show all the content */ 
+ border-color: #888;
+ transition: max-height 400ms ease-out, border 0ms linear;
+}
+details[open] span::before {
+ rotate: 90deg;
+ transition: rotate 200ms ease-out;
+}
+
+details>summary span.icon {
+  transition: all 200ms;
+}
+
+details {
+
+ overflow: hidden; /* Keep this line to prevent an odd blue outline around the element in Safari. */
+}
+
+div.content { 
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height 400ms ease-out, border 0ms 400ms linear;
+}
+
 @tailwind components;
 @tailwind utilities;
