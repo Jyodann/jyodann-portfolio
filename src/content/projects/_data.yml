@@ -1,7 +1,4 @@
 description: Default
 tags: 
   - project
-templateEngine:
-  - vto
-  - md
 layout: post.vto
