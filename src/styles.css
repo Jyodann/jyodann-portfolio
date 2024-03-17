@@ -4,17 +4,34 @@
 
 @layer base {
   h1 {
-    @apply text-2xl;
+    @apply text-4xl;
+    @apply font-bold;
+    @apply block;
+    @apply py-2;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   h3 {
+    @apply text-xl;
+  }
+
+  p {
     @apply text-lg;
   }
+
   a {
     @apply text-black;
     @apply dark:text-white underline;
+  }
+
+  li {
+    @apply list-item list-inside 
+  }
+
+  ul {
+    @apply list-disc;
+    @apply py-2;
   }
 }
 

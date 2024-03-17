@@ -9,16 +9,16 @@ quick_links:
 {{ set img = thumbnail}}
 {{/if}}
 <div class="flex justify-center flex-col py-4">
-
+    <div class="py-2 text-center"><a href="{{ '/projects' |> url }}">Go Back to Projects</a></div>
     {{if img}}
 
     <img class="w-full" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 1200@2">
     <p class="text-4xl font-semibold py-2">{{title}}</p>
 
-    <p class="text-lg"> {{description}} </p>
+    <p class="text-2xl"> {{description}} </p>
     {{/if}}
 
-    <div class="py-4 w-full">
+    <div class="pt-2 w-full">
         <table class="w-full text-center table table-fixed bg-yellow-200 dark:bg-slate-800 border border-collapse border-black dark:border-white ">
             <thead class="border border-black dark:border-white ">
                 <tr class="font-bold">
@@ -61,5 +61,5 @@ quick_links:
         </table>
     </div>
     
-    <div class="pt-4"> {{content}} </div>
+    <div class="pt-2"> {{content}} </div>
 </div>
