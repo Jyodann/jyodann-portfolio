@@ -16,8 +16,10 @@ const site = lume(
         dest: "./output"
     }
 );
+site.use(picture());
+site.use(transformImages());
 // Inline SVG Assets
-site.use(inline())
+site.use(inline());
 // Tailwind Implmentation
 site.use(tailwindcss({
     options : {
@@ -31,11 +33,10 @@ site.use(tailwindcss({
         }
     }
 }
-))
-site.use(postcss())
+));
+site.use(postcss());
 // Resize Images to optimize for loading:
-site.use(picture());
-site.use(transformImages());
+
 
 // Add Meta Tags
 site.use(metas());
@@ -51,5 +52,4 @@ site.use(readInfo());
 
 //Minify Js
 site.use(terser(/* Options */));
-
 export default site;

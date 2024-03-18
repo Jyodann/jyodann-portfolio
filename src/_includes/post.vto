@@ -1,6 +1,7 @@
 ---
 layout: layout.vto
 quick_links:
+project_status:
 ---
 
 {{if cover_img}}
@@ -9,17 +10,15 @@ quick_links:
 {{ set img = thumbnail}}
 {{/if}}
 <div class="flex justify-center flex-col py-4">
-
+    <div class="py-2 text-center"><a href="{{ '/projects' |> url }}">Go Back to Projects</a></div>
     {{if img}}
-
     <img class="w-full" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 1200@2">
     <p class="text-4xl font-semibold py-2">{{title}}</p>
-
-    <p class="text-lg"> {{description}} </p>
     {{/if}}
-
-    <div class="py-4 w-full">
-        <table class="w-full text-center table table-fixed bg-yellow-200 dark:bg-slate-800 border border-collapse border-black dark:border-white ">
+    <p class="text-2xl"> {{description}} </p>
+    <div class="pt-2 w-full">
+        <table
+            class="w-full text-center table table-fixed bg-yellow-200 dark:bg-slate-800 border border-collapse border-black dark:border-white ">
             <thead class="border border-black dark:border-white ">
                 <tr class="font-bold">
                     <td class="border border-black dark:border-white  w-1/4">Key 🔑</td>
@@ -28,9 +27,15 @@ quick_links:
             </thead>
             <tbody class="bg-yellow-100 dark:bg-slate-700">
                 <tr class="table-row">
-                    <td class="">Date</td>
+                    <td class="border border-black dark:border-white py-2">Project Status</td>
                     <td class="border border-black dark:border-white ">
-                       {{date.toLocaleDateString("en-GB")}}
+                        {{ project_status }}
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td class="py-2">Date</td>
+                    <td class="border border-black dark:border-white ">
+                        {{date.toLocaleDateString("en-GB")}}
                     </td>
                 </tr>
                 <tr class="table-row">
@@ -38,7 +43,7 @@ quick_links:
                     <td class="border border-black dark:border-white ">
                         <div
                             class="flex align-middle content-center place-content-center items-center gap-x-4 w-full h-full py-2">
-    
+
                             {{for item of built_with}}
                             <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none" height="40" width="40"
                                 src="/assets/svg/{{item}}.svg" inline>
@@ -54,12 +59,12 @@ quick_links:
                             <li class="py-2"> <a target="_blank" href="{{link.url}}">{{link.name}}</a> </li>
                             {{/for }}
                         </ul>
-    
+
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    
-    <div class="pt-4"> {{content}} </div>
+    <h1>Details</h1>
+    <div transform-images="avif webp jpg 1000"> {{content}} </div>
 </div>
