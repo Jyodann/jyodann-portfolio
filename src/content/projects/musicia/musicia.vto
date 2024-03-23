@@ -1,0 +1,41 @@
+---
+layout: post.vto
+thumbnail: 'musica-thumbnail.png'
+title: Musicia
+description: Android Music App that plays Spotify Previews
+date: 2020-04-22
+built_with: [android, java, azure]
+quick_links:
+    - name: View Source Code on Github
+      url: https://github.com/Jyodann/Musicia
+project_status: Complete, but uses old Android APIs / SDKs, and may not compile properly on mordern versions of 
+    Android. The Web API on Azure is no longer available; but a replacement API on CloudFlare has been provided
+    for compatibility and showcase purposes.
+basename: '.'
+templateEngine: [vto, md]
+---
+
+> Note: You may see the use of "Kimiwakirei" as my alias/name instead of "Jyodann"
+
+{{ comp.carousel({
+    photos: [
+        'photo_1.png',
+        'photo_2.png',
+        'photo_3.png',
+        'photo_4.png'
+    ]
+}) }}
+
+Musicia an Android App (Java) that leverages the Spotify API's [Get Track](https://developer.spotify.com/documentation/web-api/reference/get-track)
+API to play the `preview_url` of any song on Spotify with the following features:
+
+- Uses FirebaseAuth to handle user registration, login and preferences
+- Stores songs in user's device
+- Streams songs and allows for Play/Pause, looping, seeking and shuffling
+
+The server that provides the endpoint was originally implemented with a PHP script running on an Azure server in 2019, but has
+since been replaced with a Cloudflare+JS implementation in 2024.
+
+# Motivation
+
+Musicia was created as a deliverable for the COMT (Computational Thinking) submission in Y1S1.
