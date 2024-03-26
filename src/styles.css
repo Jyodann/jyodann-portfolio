@@ -69,8 +69,12 @@ div.content {
  transition: max-height 400ms ease-out, border 0ms 400ms linear;
 }
 
+blockquote p {
+  @apply p-4 bg-yellow-100 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-slate-800
+}
+
 blockquote {
-  @apply p-4 my-4 bg-yellow-100 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-slate-800
+  @apply py-2
 }
 
 
