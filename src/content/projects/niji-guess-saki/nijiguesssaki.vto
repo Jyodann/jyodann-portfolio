@@ -1,0 +1,41 @@
+---
+layout: post.vto
+thumbnail: 'nijiguesssaki.png'
+title: NijiGuessSaki
+date: '2022-04-24'
+description: A spin on the game Heardle using Spotify Previews
+built_with: ["blazor", "heroku", "c_sharp"]
+quick_links:
+    - name: View Source Code on Github
+      url: https://github.com/Jyodann/NijiGuessSaki
+basename: "."
+templateEngine: [vto, md]
+project_status: Complete, but archived. 
+---
+
+> ❗️ This project is no longer published as Heroku's Free tier was discontinued. Project has not been restored on other platforms as it may violate Spotify's Developer API policies (Cannot use Previews for Games). Please do not deploy this.
+
+NijiGuessSaki is a project that was inspired by 
+[Heardle](https://heardlegame.co/), a game that lets you guess the full song
+based on a snippet of the song. Similar to the game [Wordle](https://www.nytimes.com/games/wordle/index.html)
+but with Music 🎵.
+
+NijiGuessSaki allows you to add a Public Spotify Playlist, and works with any song that has Song Previews:
+
+<img src="add_songs.png">
+
+In the guessing interface, it plays a short snippet of the song (0.5 seconds)
+in a random section of the song. You may choose to add more time to play the song
+to aid your guess. 
+
+<img src="guess.png">
+
+# Motivation
+
+Heardle's implementation is based on a set list of popular 
+English Pop songs, but I decided to build NijiGuessSaki as a way to customise the 
+songs that are in the playlist. The name "NijiGuessSaki" comes from the 
+[Nijigasaki](https://en.wikipedia.org/wiki/Love_Live!_Nijigasaki_High_School_Idol_Club)
+idol group from the LoveLive! series. The name was choosen as I really liked
+their songs and was sharing the experience with my friend, Leonard, who
+was also a Beta tester and the creator of the name as well :D
