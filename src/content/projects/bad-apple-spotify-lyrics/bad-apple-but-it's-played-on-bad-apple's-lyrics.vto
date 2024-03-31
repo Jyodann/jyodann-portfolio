@@ -1,0 +1,34 @@
+---
+layout: post.vto
+thumbnail: 'bad_apple.png'
+title: Bad Apple but it's played on Bad Apple's lyrics
+date: '2022-08-11'
+quick_links:
+  - name: Watch Video on YouTube
+    url: 'https://www.youtube.com/watch?v=p_bAnoAZVWs&feature=youtu.be'
+description: My contribution to the TouHou Community of playing Bad Apple on everything.
+built_with: [python, js]
+basename: "."
+templateEngine: ['vto', 'md']
+project_status: Complete, but source code is sadly missing.
+---
+
+<iframe class="w-full h-48 lg:h-96" src="https://www.youtube-nocookie.com/embed/p_bAnoAZVWs?si=3NO9cXnE8nsLlAPe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[Bad Apple](https://en.wikipedia.org/wiki/Bad_Apple!!) is a track that is part of the Bullet
+Hell game in the [TouHou Project Series](https://en.wikipedia.org/wiki/Touhou_Project). A shadow
+art music video was then released accompanying the song, which has then spawned various 
+people on the Internet playing Bad Apple on [everything](https://www.youtube.com/playlist?list=PLajlU5EKJVdonUGTEc7B-0YqElDlz9Sf9) 
+due to the video's simple nature of being in only two shades, lending it to be easily
+played on anything that can represent an ON and OFF state. 
+
+The video shown above is my project which dynamically injects and modifies the DOM
+elements of [Spotify's Lyric Page](https://support.spotify.com/us/article/lyrics/) 
+to a white character or black character to show the silhouettes in the video.
+
+# Motivation
+
+This project is just a fun side project for me to mess with various technologies.
+Python was used with CV2, Numpy and PIL to extract and parse all the video contents,
+JavaScript was used to dynamically inject and modify the DOM elements on [Spotify's Lyric Page](https://support.spotify.com/us/article/lyrics/)
+to create what you see on the video.
