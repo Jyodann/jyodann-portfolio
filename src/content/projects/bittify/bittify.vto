@@ -1,0 +1,72 @@
+---
+layout: post.vto
+thumbnail: 'bittify.png'
+title: Bittify
+date: '2023-07-15'
+description: Spotify Miniplayer for Windows, MacOS and Linux
+built_with: ["godot", "cloudflare"]
+quick_links:
+    - name: Download Latest Release 
+      url: https://github.com/Jyodann/Bittify/releases
+    - name: View Source Code on Github
+      url: https://github.com/Jyodann/Bittify/
+    - name: Documentation Submitted for Spotify API Approval
+      url: https://drive.google.com/file/d/12-bl5jYu8Yr35zds8efA3G49Rm2Iip5i/view?usp=sharing
+templateEngine: [vto, md]
+basename: "."
+project_status: Complete, but sadly deprecated by Spotify due to thier team
+  building their own better Miniplayer into their own Desktop Application
+---
+
+> ❗ As of 21st March 2024, I would say that Bittify is largely for novelty purposes,
+  if you are looking for a proper Miniplayer, please just use the built-in one on
+  the latest build of Spotify Desktop, it is faster and more responsive. Read more 
+  [here](https://community.spotify.com/t5/Community-Blog/Introducing-the-Spotify-Miniplayer-to-Spotify-Desktop/ba-p/5956132)
+
+<div class="flex justify-center">
+  <img src="bittify_player.png">
+</div>
+
+Bittify is a rebuilt version of [Minify](/projects/minify) using the
+Godot Engine. The rebuild was to support more features on top of Minify, like:
+- Resizable Windows with Adaptive backgrounds
+- Release for MacOS Universal and Linux 
+- A more customisable player, allowing for Text Speed, Display Style and more 
+  to be changed.
+
+<div class="flex justify-center p-2">
+  <img src="settings.png">
+</div>
+
+Along with that, Bittify features a bunch of backend improvements, like:
+- Using Godot, so ram usage is lower
+- Using CloudFlare Workers, which are easier to maintain and setup
+- A fully working CI/CD pipeline using Github Actions which builds
+  the different applications automatically on push to assist in Deployment
+  and testing
+
+# Motivation
+
+I wanted a Mac Version. 
+
+And so, Bittify/Minify was actually rebuilt MANY MANY times as I wanted borderless window
+support on more than just Windows. You can view
+the graveyard of experiments here:
+- [Tauri Version](https://github.com/Jyodann/BittifyTauri)
+- [Godot C# Version](https://github.com/Jyodann/BittifyGodot)
+
+And there were also [Flutter](https://flutter.dev/), 
+[Electron](https://www.electronjs.org/), 
+[.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui?view=net-maui-8.0), 
+[.NET Avalonia](https://avaloniaui.net/) versions that never made it past
+experimental status.
+
+Whew! With something like that, I might be able to compete with 
+[Google's graveyard](https://killedbygoogle.com/)
+
+Jokes aside, this project was definitely one that taught me it was important to not only 
+experiment to find the proper tool for your use case and comfort, but also know that failure is part of building software. 
+I ended up choosing Godot as I was simply just more used to using Game Engines,
+and they happened to have everything I wanted. 
+
+You can take this as a lesson for your future endeavours 😊 Good luck out there!
