@@ -1,0 +1,36 @@
+---
+thumbnail: 'musical_mosaic.png'
+title: Musical Mosaic
+description: A web application that produces a collage of photos containing your favourites from Spotify across different time periods 
+built_with: ["svelte", "cloudflare", "tailwindcss"]
+date: 2023-09-05
+quick_links:
+    - name: Try it here!
+      url: https://mosaic.jyodann.com/
+    - name: View Source Code on Github
+      url: https://github.com/Jyodann/musical-mosaic
+project_status: Complete
+templateEngine: [vto, md]
+basename: "."
+---
+
+Musical Mosaic is a Web Application written with SvelteKit that produces a 
+ photo collage of all your favourite songs on Spotify, inspired by [Reciptify](https://receiptify.herokuapp.com/)
+
+<div class="flex justify-center p-2">
+  <img class="h-full" src="mosaic.png"> 
+</div>
+
+It allows you to choose between time periods, blending your recent favourites,
+or your all time favourites, using the Spotify's 
+[Top Items API endpoint](https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks)
+
+
+# Motivation 
+
+At the time, there was a large number of web applications floating around
+that used data to produce something unique to the user. Be it a Pie Chart,
+Mood Graph, or even a Receipt. I saw that people loved to share these unique
+experiences on Social Media, and decided to build one of my own. 
+
+If you like what you see, why not give it a [whirl](https://mosaic.jyodann.com/)? 😄
