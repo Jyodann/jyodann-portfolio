@@ -7,3 +7,8 @@ To run the project, install Deno and run:
 ```bash
 deno task lume -s
 ```
+
+# Issues
+
+If there are any spelling errors, broken links, site issues etc, please do open an issue
+and let me know! :D Thank you!
