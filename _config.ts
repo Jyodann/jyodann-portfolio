@@ -21,7 +21,6 @@ site.use(transformImages());
 // Inline SVG Assets
 site.use(inline());
 
-
 // Tailwind Implmentation
 site.use(tailwindcss({
     options : {
@@ -54,6 +53,4 @@ site.use(readInfo());
 
 //Minify Js
 site.use(terser(/* Options */));
-
-site.copy('./outfit.woff', './outfit.woff')
 export default site;

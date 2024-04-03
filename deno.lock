@@ -3,6 +3,7 @@
   "packages": {
     "specifiers": {
       "npm:@js-temporal/polyfill@0.4.4": "npm:@js-temporal/polyfill@0.4.4",
+      "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:autoprefixer@10.4.17": "npm:autoprefixer@10.4.17_postcss@8.4.35",
       "npm:highlight.js@11.9.0": "npm:highlight.js@11.9.0",
       "npm:ico-endec@0.1.6": "npm:ico-endec@0.1.6",
@@ -1373,6 +1374,9 @@
         "dependencies": {}
       }
     }
+  },
+  "redirects": {
+    "https://esm.sh/v135/@types/clean-css@latest/index.d.ts": "https://esm.sh/v135/@types/clean-css@4.2.11/index.d.ts"
   },
   "remote": {
     "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.2.9/adapters/lume.ts": "bcfbbca8b315cb472a50dee95d266fc3369b1ba56a9e8aca5e8c762e9029bfa2",
