@@ -5,6 +5,7 @@ type: toplevel
 layout: nav_page_base.vto
 templateEngine: [vto]
 css_dependents: ["styles.css"]
+description: Projects that I have done over the years.
 ---
 {{ set groups = Object.groupBy(search.pages("project", "date=desc"), ({ date }) => date.getFullYear()) }}
 
