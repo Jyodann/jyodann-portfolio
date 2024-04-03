@@ -8,12 +8,11 @@
             <a class="text-2xl font-bold px-2 no-underline text-black dark:text-white" href="/">Jyodann</a>
         </div>
         <div class="flex gap-4">
-            <a>
+            <div>
                 <img class="switch hidden" id="dark" src="/assets/svg/dark.svg" inline />
                 <img class="switch" id="light" src="/assets/svg/light.svg" inline />
-            </a>
+            </div>
             {{for page of search.pages("type=toplevel")}}
-            
             <a class=" text-black dark:text-white {{if page.nav_label == page_name}} underline {{else}} no-underline {{/if}}" href="{{page.url}}">{{page.nav_label}}</a>
             {{/for}}
 

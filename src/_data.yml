@@ -25,10 +25,11 @@ achievements:
 - name: PolyFintech100 API Hackaton 2020 - 2nd Place
   url: https://www.linkedin.com/pulse/polyfintech-100-hackathon-2020-meet-team-agile-tp-the-sandbox/
 
-project_years: [2024, 2023, 2022, 2021, 2020, 2016]
 metas:
   site: Jyodann's Website
-  twitter: "@jyodann"
-  icon: /img/icon.png
+  twitter: "@jyodann_"
+  icon: "=thumbnail"
   lang: en
   generator: true
+  title: "=title"
+  description: "=description"
