@@ -9,6 +9,7 @@ import readInfo from "lume/plugins/reading_info.ts";
 import terser from "lume/plugins/terser.ts";
 import postcss from "lume/plugins/postcss.ts";
 import lightningCss from "lume/plugins/lightningcss.ts";
+import robots from "lume/plugins/robots.ts";
 
 const site = lume(
     {
@@ -16,8 +17,11 @@ const site = lume(
         dest: "./output"
     }
 );
+
+// Optimize and transform imgs:
 site.use(picture());
 site.use(transformImages());
+
 // Inline SVG Assets
 site.use(inline());
 
@@ -35,22 +39,32 @@ site.use(tailwindcss({
     }
 }
 ));
-site.use(postcss());
-// Resize Images to optimize for loading:
 
+// Required by Tailwind
+site.use(postcss());
+
+// Minify CSS
 site.use(lightningCss());
 
 // Add Meta Tags
 site.use(metas());
+
+// Favicon:
 site.use(favicon(
     {
         input: "./assets/img/favicon.png"
     }
 ));
 
-// Reading Length
+// Reading Length:
 site.use(readInfo());
 
 //Minify Js
 site.use(terser(/* Options */));
+
+// Robots.txt
+site.use(robots({
+  allow: ["Googlebot", "Bingbot"],
+}));
+
 export default site;
