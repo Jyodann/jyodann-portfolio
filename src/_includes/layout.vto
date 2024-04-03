@@ -1,5 +1,6 @@
 ---
 isHome: false
+css_dependents: ["styles.css"]
 ---
 
 <!DOCTYPE html>
@@ -9,10 +10,10 @@ isHome: false
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jyodann | {{ title }} </title>
-
-  <link rel="stylesheet" href="/styles.css">
-
-  <script src="/assets/code/theme_switcher.js">  </script>
+  {{for css of css_dependents}}
+  <link rel="stylesheet" href="/assets/styles/{{css}}">
+  {{/for}}
+  <script defer src="/assets/code/new_theme_switcher.js"></script>
 </head>
 
 <body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">

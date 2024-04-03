@@ -8,9 +8,9 @@
             <a class="text-2xl font-bold px-2 no-underline text-black dark:text-white" href="/">Jyodann</a>
         </div>
         <div class="flex gap-4">
-            <a id="theme_switcher">
-                <img class="hidden" id="theme_dark" src="/assets/svg/dark.svg" inline />
-                <img class="hidden" id="theme_light" src="/assets/svg/light.svg" inline />
+            <a>
+                <img class="switch hidden" id="dark" src="/assets/svg/dark.svg" inline />
+                <img class="switch" id="light" src="/assets/svg/light.svg" inline />
             </a>
             {{for page of search.pages("type=toplevel")}}
             
