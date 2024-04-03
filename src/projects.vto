@@ -3,14 +3,13 @@ title: Projects
 nav_label: projects
 type: toplevel
 layout: nav_page_base.vto
-templateEngine:
-- vto
+templateEngine: [vto]
 css_dependents: ["styles.css"]
 ---
-
 {{ set groups = Object.groupBy(search.pages("project", "date=desc"), ({ date }) => date.getFullYear()) }}
-<div>here are some projects i've worked on over the years:</div>
 
+<div>here are some projects i've worked on over the years</div>
+<div class="py-4">
 {{ for year of Object.keys(groups).reverse()}}
 <p class="text-4xl font-semibold text-gray-600 dark:text-gray-200"> {{year}} </p>
 <div class="h-1 bg-gray-600 dark:bg-gray-200 mb-4"></div>
@@ -20,3 +19,5 @@ css_dependents: ["styles.css"]
     {{ /for }}
 </div>
 {{ /for }}
+</div>
+</div>

@@ -16,8 +16,8 @@
   }
 
   p {
-    @apply text-lg;
-    @apply py-1
+    @apply py-1;
+    @apply text-justify;
   }
 
   a {
@@ -30,8 +30,7 @@
   }
 
   ul {
-    @apply list-disc;
-   
+    @apply list-disc; 
   }
 }
 
