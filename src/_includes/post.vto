@@ -9,8 +9,8 @@ project_status:
 {{ else }}
 {{ set img = thumbnail}}
 {{/if}}
-<div class="flex justify-center flex-col py-4">
-    <div class="py-2 text-center"><a href="{{ '/projects' |> url }}">Go Back to Projects</a></div>
+<div class="flex justify-center flex-col">
+    <div class="py-2 text-center"><a href="{{ '/projects' |> url }}">Back to Projects</a></div>
     {{if img}}
     <img class="w-full" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 600@2">
     <p class="text-4xl font-semibold py-2">{{title}}</p>
