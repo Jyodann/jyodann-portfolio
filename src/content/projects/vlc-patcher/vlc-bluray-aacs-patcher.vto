@@ -1,0 +1,43 @@
+---
+layout: post.vto
+thumbnail: 'vlc_patcher.png'
+title: VLC Bluray AACS Patcher
+date: '2024-01-27'
+built_with: ['c_sharp']
+description: A small application that attempts to fix the 'AACS Decoding' 
+  error on VLC Player
+quick_links:
+    - name: Download Latest Release
+      url: https://github.com/Jyodann/vlc_bluray_patcher/releases
+    - name: View Source Code on Github
+      url: https://github.com/Jyodann/vlc_bluray_patcher/
+project_status: Under Development, Complete Build is available.
+basename: "."
+templateEngine: [vto, md]
+---
+When you attempt to play BluRays using 
+[VLC Media player](https://www.videolan.org/), this error may occur:
+
+<div class="flex justify-center py-2">
+  <img src="error_msg.png">
+</div>
+
+Simply put, the default build of VLC does not have two components,
+the [AACS Library](https://www.videolan.org/developers/libaacs.html) and
+the encryption keys for playback of Blu-Rays.
+
+This application is a simple CLI application built to do the following:
+- Download VLC using Winget
+- Download the AACS Library and Keys
+- Place Keys and AACS library in the correct Place
+
+The instructions are provided [here as well](https://vlc-bluray.whoknowsmy.name/).
+
+I hope to also build versions that work on MacOS and Linux.
+
+# Motivation
+
+I bought a few blurays of 
+[Makoto Shinkai's](https://en.wikipedia.org/wiki/Makoto_Shinkai) Movies,
+and was quite sad I couldn't play them, so I made something to help 
+with that.
