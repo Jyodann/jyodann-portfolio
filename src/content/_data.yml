@@ -3,3 +3,6 @@ built_with: []
 thumbnail: ""
 cover_img: ""
 basename: ""
+
+metas:
+  icon: "$ img.cover attr(src)"

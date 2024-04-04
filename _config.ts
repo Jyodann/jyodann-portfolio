@@ -14,7 +14,8 @@ import robots from "lume/plugins/robots.ts";
 const site = lume(
     {
         src: "./src",
-        dest: "./output"
+        dest: "./output",
+        location: new URL("https://jyodann.com")
     }
 );
 
