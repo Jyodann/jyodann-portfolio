@@ -12,7 +12,7 @@ project_status:
 <div class="flex justify-center flex-col pb-2">
     <div class="py-2 text-center"><a href="{{ '/projects' |> url }}">Back to Projects</a></div>
     {{if img}}
-    <img alt="Project {{title}}'s Top Cover Image" class="w-full" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 600@2">
+    <img alt="Project {{title}}'s Top Cover Image" class="w-full cover" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 600@2">
     <p class="text-4xl font-semibold py-2">{{title}}</p>
     {{/if}}
     <p class="text-2xl"> {{description}} </p>
