@@ -11,6 +11,11 @@ import postcss from "lume/plugins/postcss.ts";
 import lightningCss from "lume/plugins/lightningcss.ts";
 import robots from "lume/plugins/robots.ts";
 import feed from "lume/plugins/feed.ts";
+import { globToRegExp } from "lume/deps/path.ts";
+import { path } from "https://deno.land/x/vento@v0.10.2/deps.ts";
+import { expandGlob, expandGlobSync } from "lume/deps/fs.ts";
+import FS from "lume/core/fs.ts";
+
 const site = lume(
     {
         src: "./src",
@@ -18,6 +23,32 @@ const site = lume(
         location: new URL("https://jyodann.com")
     }
 );
+
+site.use(feed({
+    output: ["/posts.rss"],
+    query: "blog",
+    info: {
+        title: "=site.title",
+        description: "=site.description",
+    },
+    items: {
+        title: "=title",
+        description: "=description",
+    },
+}));
+
+site.use(feed({
+    output: ["/projects.rss"],
+    query: "project",
+    info: {
+        title: "=site.title",
+        description: "=site.description",
+    },
+    items: {
+        title: "=title",
+        description: "=description",
+    },
+}));
 
 // Optimize and transform imgs:
 site.use(picture());
@@ -68,31 +99,21 @@ site.use(robots({
     allow: ["Googlebot", "Bingbot"],
 }));
 
-site.use(feed({
-    output: ["/posts.rss"],
-    query: "blog",
-    info: {
-        title: "=site.title",
-        description: "=site.description",
-    },
-    items: {
-        title: "=title",
-        description: "=description",
-    },
-}));
+// Copy Images
+site.process([".rss"], (pages) => {
+    console.log(pages)
+});
 
-site.use(feed({
-    output: ["/projects.rss"],
-    query: "project",
-    info: {
-        title: "=site.title",
-        description: "=site.description",
-    },
-    items: {
-        title: "=title",
-        description: "=description",
-    },
-}));
-
-
+site.addEventListener("afterBuild", async (updates) => {
+    console.log("Build Finished");
+    console.log(Deno.cwd())
+    const glob = await expandGlob("./output/*.rss", {
+        root: Deno.cwd()
+    })
+    for await (const filePath of glob) {
+        let fileContents = await Deno.readTextFile(filePath.path)
+        fileContents = fileContents.replaceAll(".png", "-1000w.webp")
+        await Deno.writeTextFile(filePath.path, fileContents)
+    }
+})
 export default site;
