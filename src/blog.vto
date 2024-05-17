@@ -1,20 +1,21 @@
 ---
-title: Projects
-nav_label: projects
-type: toplevel
+title: Blog
+nav_label: blog
+type: toplevel-
 layout: nav_page_base.vto
 templateEngine: [vto]
 css_dependents: ["styles.css"]
 description: Projects that I have done over the years.
 ---
-{{ set groups = Object.groupBy(search.pages("project", "date=desc"), ({ date }) => date.getFullYear()) }}
 
-<div>here are some projects i've worked on over the years</div>
+{{ set groups = Object.groupBy(search.pages("blog", "date=desc"), ({ date }) => date.getFullYear()) }}
+<div>some of my thoughts on various things</div>
+
 <div class="py-4">
     {{ for year of Object.keys(groups).reverse()}}
     <p class="text-4xl font-semibold text-gray-600 dark:text-gray-200"> {{year}} </p>
     <div class="h-1 bg-gray-600 dark:bg-gray-200 mb-4"></div>
-    <div class="flex flex-col gap-4">
+    <div class="">
         {{for project of groups[year]}}
         {{ comp.card_blog({project: project})}}
         {{ /for }}

@@ -10,7 +10,7 @@ import terser from "lume/plugins/terser.ts";
 import postcss from "lume/plugins/postcss.ts";
 import lightningCss from "lume/plugins/lightningcss.ts";
 import robots from "lume/plugins/robots.ts";
-
+import feed from "lume/plugins/feed.ts";
 const site = lume(
     {
         src: "./src",
@@ -28,14 +28,14 @@ site.use(inline());
 
 // Tailwind Implmentation
 site.use(tailwindcss({
-    options : {
+    options: {
         darkMode: 'selector',
         theme: {
             extend: {
-            fontFamily : {
-                outfit : ['Outfit', 'sans-serif'], 
-            },
-           }
+                fontFamily: {
+                    outfit: ['Outfit', 'sans-serif'],
+                },
+            }
         }
     }
 }
@@ -65,7 +65,34 @@ site.use(terser(/* Options */));
 
 // Robots.txt
 site.use(robots({
-  allow: ["Googlebot", "Bingbot"],
+    allow: ["Googlebot", "Bingbot"],
 }));
+
+site.use(feed({
+    output: ["/posts.rss"],
+    query: "blog",
+    info: {
+        title: "=site.title",
+        description: "=site.description",
+    },
+    items: {
+        title: "=title",
+        description: "=description",
+    },
+}));
+
+site.use(feed({
+    output: ["/projects.rss"],
+    query: "project",
+    info: {
+        title: "=site.title",
+        description: "=site.description",
+    },
+    items: {
+        title: "=title",
+        description: "=description",
+    },
+}));
+
 
 export default site;

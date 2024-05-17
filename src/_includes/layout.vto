@@ -9,7 +9,7 @@ css_dependents: ["styles.css"]
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jyodann | {{ title }} </title>
+  <title>{{ title }} | Jyodann</title>
   {{for css of css_dependents}}
   <link rel="stylesheet" href="/assets/styles/{{css}}">
   {{/for}}
@@ -21,7 +21,7 @@ css_dependents: ["styles.css"]
   <body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
     {{ comp.navigation_bar({ isHome: isHome, page_name: basename})}}
     <div class="flex flex-grow justify-center">
-      <div class="container mx-auto xl:px-80 lg:px-48 md:px-24 px-4">
+      <div class="container mx-auto 2xl:px-72 xl:px-60 lg:px-48 md:px-36 sm:px-20 px-4">
         {{ content }}
       </div>
     </div>
