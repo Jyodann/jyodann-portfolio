@@ -9,27 +9,40 @@ description: "Home Page of Jyodann's Website"
 ---
 
 <div>
-	<div class="flex flex-col items-center h-svh justify-center">
-		<img src="/assets/img/logo.png" height="256" width="256" transform-images="avif webp jpg 512"
-			alt="Jyodann's Profile Picture" />
-		<div class="text-4xl py-2">
-			hi there, i'm jordan!
+	<div class="h-svh flex flex-col items-center justify-evenly">
+
+		<div class="flex flex-col items-center basis-[85%] justify-center">
+			<img src="/assets/img/logo.png" height="256" width="256" transform-images="avif webp jpg 512"
+				alt="Jyodann's Profile Picture" />
+			<div class="text-4xl py-2">
+				hi there, i'm jordan!
+			</div>
+			<div class="text-center text-lg">
+				full time dreamer ☁, part time coder 💻
+			</div>
+			<div class="flex gap-x-4 text-xl py-4">
+				{{for link of links}}
+				<a target="_blank" href="{{link.url}}">
+					<img class="fill-black dark:fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg"
+						inline>
+				</a>
+
+				{{ /for }}
+			</div>
+
 		</div>
-		<div class="flex gap-x-2 text-xl">
-			{{for link of links}}
-			<img class="fill-black dark:fill-white" height="36" width="36" src="/assets/svg/social/{{link.name}}.svg"
-				inline>
-			{{ /for }}
-		</div>
-		<div class="text-center py-2">
-			full time dreamer, part time coder
+		<div class="basis-[5%] flex">
+			<a href="#about">
+				<img height="48" class="fill-white animate-bounce" src="/assets/svg/arrow.svg" inline>
+			</a>
+
 		</div>
 	</div>
 
-	<div class="flex flex-col items-center h-screen">
-		<p class="text-4xl text-center">about me:</p>
+	<div class="flex flex-col items-center">
+		<p id="about" class="text-4xl text-center">about me:</p>
 		<div class="flex flex-col">
-			<div class="text-justify flex flex-col gap-2">
+			<div class="text-justify flex flex-col gap-2 mx-2 text-lg">
 				<p>Hi there, I'm Jordan Khong, a software and game developer from Singapore.
 					I enjoy creating small tools that entertain and sometimes help people;
 					I primarily use Godot and Unity with C# as my go-to tools and language,
