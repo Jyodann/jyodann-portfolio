@@ -37,7 +37,7 @@
 }
 
 blockquote p {
-	@apply p-4 bg-yellow-100 border-l-4 border-gray-300 border-gray-500 bg-slate-800
+	@apply p-4 border-l-4 border-gray-500 bg-slate-800
 }
 
 blockquote {

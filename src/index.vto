@@ -23,7 +23,7 @@ description: "Home Page of Jyodann's Website"
 			<div class="flex gap-x-4 text-xl py-4">
 				{{for link of links}}
 				<a target="_blank" href="{{link.url}}">
-					<img class="fill-black fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg" inline>
+					<img class=" fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg" inline>
 				</a>
 
 				{{ /for }}
@@ -38,10 +38,10 @@ description: "Home Page of Jyodann's Website"
 		</div>
 	</div>
 
-	<div class="flex flex-col items-center">
+	<div class="flex flex-col items-center text-lg">
 		<p id="about" class="text-4xl text-center">about me:</p>
 		<div class="flex flex-col">
-			<div class="text-justify flex flex-col gap-2 text-lg">
+			<div class="text-justify flex flex-col gap-2">
 				<p>Hi there, I'm Jordan Khong, a software and game developer from Singapore.
 					I enjoy creating small tools that entertain and sometimes help people;
 					I primarily use Godot and Unity with C# as my go-to tools and language,
@@ -109,13 +109,14 @@ description: "Home Page of Jyodann's Website"
 			I would be more than happy to answer questions or discuss further opportunities! Feel free to drop me a
 			message
 			on these platforms:
-			<ul class="list-disc py-2">
-				{{ for contact of contacts}}
-				<li class="list-item list-inside pb-2"> <a href="{{contact.url}}" target="_blank">{{
-						contact.name}}</a>
-				</li>
+			<div class="flex gap-x-4 text-xl py-4 justify-center">
+				{{for link of contacts}}
+				<a target="_blank" href="{{link.url}}">
+					<img class=" fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg" inline>
+				</a>
+
 				{{ /for }}
-			</ul>
+			</div>
 		</div>
 	</div>
 </div>
