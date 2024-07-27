@@ -3,108 +3,120 @@ title: Home
 name: Home
 templateEngine: [vto]
 isHome: true
-css_dependents: ["styles.css", "arrow.css"]
+css_dependents: ["styles.css"]
 thumbnail: "/assets/img/home_page_thumbnail.png"
 description: "Home Page of Jyodann's Website"
 ---
 
-<div class="justify-center flex items-center h-full py-4">
-    <div class="flex flex-col items-center">
-        <img src="/assets/img/logo.png" height="256" width="256" transform-images="avif webp jpg 512"
-            alt="Jyodann's Profile Picture" />
-        <div class="text-4xl py-2">
-            hi there, i'm jordan!
-        </div>
-        <div class="flex gap-x-2 text-xl">
-            {{for link of links}}
-            <a target="_blank" href="{{link.url}}">{{ link.name }} </a>
-            {{ /for }}
-        </div>
-        <div class="text-center py-2">
-            sometimes i write software,
-            sometimes i sleep,
-            sometimes i write software in my sleep
-        </div>
-        <details class="select-none w-full">
-            <summary>
-                <div class="flex items-center justify-center">
-                    <span class="icon dark:fill-white"><img src="/assets/svg/expand.svg" inline height="50"></span>
-                </div>
-            </summary>
-        </details>
-        <div class="content">
-            <p class="text-4xl text-center">about me:</p>
-            <div class="flex flex-col">
-                <div class="text-justify flex flex-col gap-2">
-                    <p>Hi there, I'm Jordan Khong, a software and game developer from Singapore.
-                        I enjoy creating small tools that entertain and sometimes help people;
-                        I primarily use Godot and Unity with C# as my go-to tools and language,
-                        but I am open to using various technologies to explore outside of game development.</p>
+<div class="mx-2">
+	<div class="h-[calc(100vh-64px)] flex flex-col items-center justify-evenly">
 
-                    <p>I graduated from Temasek Polytechnic in 2022 with a diploma in
-                        <a target="_blank"
-                            href="https://www.tp.edu.sg/schools-and-courses/students/schools/iit/immersive-media-and-game-development.html"
-                            )>
-                            Game Design and Development.</a> (that's the old name, it changed when I graduated).
-                        During my time there, I
-                        had the privilege to represent my school and country in a coding competition
-                        named <a target="_blank" href="https://worldskills.org">Worldskills</a> in the IT Software
-                        Solutions
-                        for business skillset. I was also a part time teaching assistant for
-                        that skillset as well.
-                    </p>
+		<div class="flex flex-col items-center basis-[85%] justify-center">
+			<img src="/assets/img/logo.png" height="256" width="256" transform-images="avif webp jpg 512"
+				alt="Jyodann's Profile Picture" />
+			<div class="text-4xl py-2">
+				hi there, i'm jordan!
+			</div>
+			<div class="text-center text-lg">
+				full time dreamer ☁, part time coder 💻
+			</div>
+			<div class="flex gap-x-4 text-xl py-4">
+				{{for link of links}}
+				<a target="_blank" href="{{link.url}}">
+					<img class=" fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg" inline>
+				</a>
 
-                    <p>In my free time, I enjoy playing games, learning languages and watching YouTube.
-                        Some of my favourite games are: <a target="_blank"
-                            href="https://en.wikipedia.org/wiki/Super_Mario_Galaxy"> Super Mario Galaxy</a>,
-                        the Resident Evil Series, especially
-                        <a target="_blank" href="https://en.wikipedia.org/wiki/Resident_Evil_4">Resident Evil 4</a>,
-                        and <a target="_blank" href="https://en.wikipedia.org/wiki/Bayonetta">Bayonetta</a>. 
-                        I watch YouTube for entertainment, and I particularily like listening to the 
-                        <a target="_blank" href="https://www.youtube.com/@TrashTaste">Trash Taste Podcast</a> and 
-                        <a target="_blank" href="https://www.youtube.com/@oliSUNvia">oliSUNvia</a>. For tech stuff
-                        I like watching <a target="_blank" href="https://www.youtube.com/c/theprimeagen">theprimeagen</a> and
-                        <a target="_blank" href="https://www.youtube.com/@CodeAesthetic">CodeAesthetic</a>.
-                    </p>
+				{{ /for }}
+			</div>
 
-                    <p>Currently, I'm also trying my best to learn Japanese and Cantonese. Japanese for 
-                        understanding their culture and media, while Cantonese is 
-                        primarily to converse with friends and family.
-                    </p>
+		</div>
+		<div class="basis-[5%] flex">
+			<a href="#about">
+				<img height="48" class="fill-white animate-bounce" src="/assets/svg/arrow.svg" inline>
+			</a>
 
-                    <p>Also, I would like to give credit for the lovely
-                        icon drawn to <a target="_blank" href="https://jerometanart777.wixsite.com/portfolio">jerome!</a>
-                </div>
-                <p class="text-4xl text-center">here are some of my achievements:</p>
+		</div>
+	</div>
 
-                <ul class="list-disc py-2">
-                    {{ for achievement of achievements}}
-                    <li class="list-item list-inside pb-2"> <a href="{{achievement.url}}" target="_blank">{{
-                            achievement.name}}</a>
-                    </li>
-                    {{ /for }}
-                </ul>
-                <p class="text-4xl text-center">here are some of my projects:</p>
-                <div class="grid gap-8 grid-cols-1 lg:grid-cols-3 py-4">
-                    {{for project of search.pages("featured")}}
-                    {{ comp.card({project: project})}}
-                    {{ /for }}
-                </div>
+	<div class="flex flex-col items-center text-lg">
+		<p id="about" class="text-4xl text-center">about me:</p>
+		<div class="flex flex-col">
+			<div class="text-justify flex flex-col gap-2">
+				<p>Hi there, I'm Jordan Khong, a software and game developer from Singapore.
+					I enjoy creating small tools that entertain and sometimes help people;
+					I primarily use Godot and Unity with C# as my go-to tools and language,
+					but I am open to using various technologies to explore outside of game development.</p>
 
-                <a href="/projects" class="w-full dark:bg-slate-800 py-4 rounded-lg no-underline text-center bg-yellow-200">See All Projects</a>
+				<p>I graduated from Temasek Polytechnic in 2022 with a diploma in
+					<a target="_blank"
+						href="https://www.tp.edu.sg/schools-and-courses/students/schools/iit/immersive-media-and-game-development.html"
+						)>
+						Game Design and Development.</a> (that's the old name, it changed when I graduated).
+					During my time there, I
+					had the privilege to represent my school and country in a coding competition
+					named <a target="_blank" href="https://worldskills.org">Worldskills</a> in the IT Software
+					Solutions
+					for business skillset. I was also a part time teaching assistant for
+					that skillset as well.
+				</p>
 
-                <p class="text-4xl text-center w-full py-2">shall we connect?</p>
-                I would be more than happy to answer questions or discuss further opportunities! Feel free to drop me a
-                message
-                on these platforms:
-                <ul class="list-disc py-2">
-                    {{ for contact of contacts}}
-                    <li class="list-item list-inside pb-2"> <a href="{{contact.url}}" target="_blank">{{
-                            contact.name}}</a>
-                    </li>
-                    {{ /for }}
-                </ul>
-            </div>
-        </div>
-    </div>
+				<p>In my free time, I enjoy playing games, learning languages and watching YouTube.
+					Some of my favourite games are: <a target="_blank"
+						href="https://en.wikipedia.org/wiki/Super_Mario_Galaxy"> Super Mario Galaxy</a>,
+					the Resident Evil Series, especially
+					<a target="_blank" href="https://en.wikipedia.org/wiki/Resident_Evil_4">Resident Evil 4</a>,
+					and <a target="_blank" href="https://en.wikipedia.org/wiki/Bayonetta">Bayonetta</a>.
+					I watch YouTube for entertainment, and I particularily like listening to the
+					<a target="_blank" href="https://www.youtube.com/@TrashTaste">Trash Taste Podcast</a> and
+					<a target="_blank" href="https://www.youtube.com/@oliSUNvia">oliSUNvia</a>. For tech stuff
+					I like watching <a target="_blank"
+						href="https://www.youtube.com/@ThePrimeTimeagen">theprimeagen</a>,
+					<a target="_blank" href="https://www.youtube.com/@CodeAesthetic">CodeAesthetic</a> and
+					<a target="_blank" href="https://www.youtube.com/@MichaelReeves">
+						Michael Reeves
+					</a>.
+				</p>
+
+				<p>Currently, I'm also trying my best to learn Japanese and Cantonese. Japanese for
+					understanding their culture and media, while Cantonese is
+					primarily to converse with friends and family.
+				</p>
+
+				<p>Also, I would like to give credit for the lovely
+					icon drawn to <a target="_blank" href="https://jerometanart777.wixsite.com/portfolio">jerome!</a>
+			</div>
+			<p class="text-4xl text-center">here are some of my achievements:</p>
+
+			<ul class="list-disc py-2">
+				{{ for achievement of achievements}}
+				<li class="list-item list-inside pb-2"> <a href="{{achievement.url}}" target="_blank">{{
+						achievement.name}}</a>
+				</li>
+				{{ /for }}
+			</ul>
+			<p class="text-4xl text-center">here are some of my projects:</p>
+			<div class="grid gap-8 grid-cols-1 lg:grid-cols-3 py-4">
+				{{for project of search.pages("featured")}}
+				{{ comp.card({project: project})}}
+				{{ /for }}
+			</div>
+
+			<a href="/projects" class="w-full bg-slate-800 py-4 rounded-lg no-underline text-center ">See
+				All
+				Projects</a>
+
+			<p class="text-4xl text-center w-full py-2">shall we connect?</p>
+			I would be more than happy to answer questions or discuss further opportunities! Feel free to drop me a
+			message
+			on these platforms:
+			<div class="flex gap-x-4 text-xl py-4 justify-center">
+				{{for link of contacts}}
+				<a target="_blank" href="{{link.url}}">
+					<img class=" fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg" inline>
+				</a>
+
+				{{ /for }}
+			</div>
+		</div>
+	</div>
 </div>

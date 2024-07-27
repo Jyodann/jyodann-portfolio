@@ -10,65 +10,66 @@ project_status:
 {{ set img = thumbnail}}
 {{/if}}
 <div class="flex justify-center flex-col pb-2">
-    <div class="py-2 text-center"><a href="{{ '/projects' |> url }}">Back to Projects</a></div>
-    {{if img}}
-    <img alt="Project {{title}}'s Top Cover Image" class="w-full cover" src="/assets/img/thumbnails/{{img}}" transform-images="avif webp jpg 600@2">
-    <p class="text-4xl font-semibold py-2">{{title}}</p>
-    {{/if}}
-    <p class="text-2xl"> {{description}} </p>
-    <div class="pt-2 w-full">
-        <table
-            class="w-full text-center table table-fixed bg-yellow-200 dark:bg-slate-800 border border-collapse border-black dark:border-white ">
-            <thead class="border border-black dark:border-white ">
-                <tr class="font-bold">
-                    <td class="border border-black dark:border-white  w-1/4">Key 🔑</td>
-                    <td class="border border-black dark:border-white ">Value </td>
-                </tr>
-            </thead>
-            <tbody class="bg-yellow-100 dark:bg-slate-700">
-                <tr class="table-row">
-                    <td class="border border-black dark:border-white py-2">Project Status</td>
-                    <td class="border border-black dark:border-white p-2">
-                        {{ project_status }}
-                    </td>
-                </tr>
-                <tr class="table-row">
-                    <td class="py-2">Date</td>
-                    <td class="border border-black dark:border-white p-2">
-                        {{date.toLocaleDateString("en-GB")}}
-                    </td>
-                </tr>
-                <tr class="table-row">
-                    <td class="border border-black dark:border-white ">Built with</td>
-                    <td class="border border-black dark:border-white ">
-                        <div
-                            class="flex align-middle content-center place-content-center items-center gap-x-4 w-full h-full p-2">
-                           
-                            {{for item of built_with}}
-                            <img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none" height="40" width="40"
-                                src="/assets/svg/{{item}}.svg" inline>
-                            {{/for }}
+	<div class="py-2 text-center"><a href="{{ '/projects' |> url }}">Back to Projects</a></div>
+	{{if img}}
+	<img alt="Project {{title}}'s Top Cover Image" class="w-full cover" src="/assets/img/thumbnails/{{img}}"
+		transform-images="avif webp jpg 600@2">
+	<p class="text-4xl font-semibold py-2">{{title}}</p>
+	{{/if}}
+	<p class="text-2xl"> {{description}} </p>
+	<div class="pt-2 w-full">
+		<table
+			class="w-full text-center table table-fixed  bg-slate-800 border border-collapse border-black border-white ">
+			<thead class="border border-black border-white ">
+				<tr class="font-bold">
+					<td class="border border-black border-white  w-1/4">Key 🔑</td>
+					<td class="border border-black border-white ">Value </td>
+				</tr>
+			</thead>
+			<tbody class="bg-slate-100 bg-slate-700">
+				<tr class="table-row">
+					<td class="border border-black border-white py-2">Project Status</td>
+					<td class="border border-black border-white p-2">
+						{{ project_status }}
+					</td>
+				</tr>
+				<tr class="table-row">
+					<td class="py-2">Date</td>
+					<td class="border border-black border-white p-2">
+						{{date.toLocaleDateString("en-GB")}}
+					</td>
+				</tr>
+				<tr class="table-row">
+					<td class="border border-black border-white ">Built with</td>
+					<td class="border border-black border-white ">
+						<div
+							class="flex align-middle content-center place-content-center items-center gap-x-4 w-full h-full p-2">
 
-                            {{ if built_with == ""}}
-                                N.A
-                            {{ /if }}
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="border border-black dark:border-white ">Quick Links</td>
-                    <td class="border border-black dark:border-white ">
-                        <ul>
-                            {{ for link of quick_links}}
-                            <li class="py-2"> <a target="_blank" href="{{link.url}}">{{link.name}}</a> </li>
-                            {{/for }}
-                        </ul>
+							{{for item of built_with}}
+							<img alt="{{item}}" viewBox="0 0 100 100" preserveAspectRatio="none" height="40" width="40"
+								src="/assets/svg/software/{{item}}.svg" inline>
+							{{/for }}
 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <h1>Details</h1>
-    <div transform-images="avif webp jpg 1000"> {{content}} </div>
+							{{ if built_with == ""}}
+							N.A
+							{{ /if }}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="border border-black border-white ">Quick Links</td>
+					<td class="border border-black border-white ">
+						<ul>
+							{{ for link of quick_links}}
+							<li class="py-2"> <a target="_blank" href="{{link.url}}">{{link.name}}</a> </li>
+							{{/for }}
+						</ul>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h1>Details</h1>
+	<div transform-images="avif webp jpg 1000"> {{content}} </div>
 </div>

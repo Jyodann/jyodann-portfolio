@@ -3,15 +3,15 @@ project:
 templateEngine: vto
 ---
 <a href="{{project.url}}"
-    class=" text-black dark:text-white no-underline overflow-auto flex flex-col bg-white dark:bg-gray-800 shadow-sm items-center rounded-lg">
+	class=" text-white no-underline overflow-auto flex flex-col  bg-slate-800 shadow-sm items-center rounded-lg">
 
-    <img class="object-cover w-full" alt="{{project.title}}'s Cover Image" transform-images="avif jpg 480"
-        src="/assets/img/thumbnails/{{project.thumbnail}}">
-    <div class="h-full w-full p-4">
-        <div class="font-bold text-xl">{{ project.title }}</div>
-        <div class="text-gray-600 dark:text-gray-200"> {{project.date.toLocaleDateString("en-GB")}} </div>
-        <div class="line-clamp-3">
-            {{project.description}}
-        </div>
-    </div>
+	<img class="object-cover w-full" alt="{{project.title}}'s Cover Image" transform-images="avif jpg 480"
+		src="/assets/img/thumbnails/{{project.thumbnail}}">
+	<div class="h-full w-full p-4">
+		<div class="font-bold text-xl">{{ project.title }}</div>
+		<div class=" text-gray-200"> {{project.date.toLocaleDateString("en-GB")}} </div>
+		<div class="line-clamp-3">
+			{{project.description}}
+		</div>
+	</div>
 </a>

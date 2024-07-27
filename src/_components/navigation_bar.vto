@@ -1,21 +1,19 @@
-<nav class="bg-yellow-200 dark:bg-slate-800 flex justify-center dark:text-white">
-    <div class="container mx-auto 2xl:px-72 xl:px-60 lg:px-48 md:px-36 sm:px-20 px-4 flex justify-between items-center py-4">
-        <div class="flex items-center">
-            {{if !isHome}}
-            <img alt="Jyodann's Profile Picture" width="32" height="32"
-                src="/assets/img/favicon.png" transform-images="avif webp png 64">
-            {{/if}}
-            <a class="text-2xl font-bold px-2 no-underline text-black dark:text-white" href="/">Jyodann</a>
-        </div>
-        <div class="flex gap-4">
-            <div>
-                <img class="switch hidden" id="dark" src="/assets/svg/dark.svg" inline />
-                <img class="switch" id="light" src="/assets/svg/light.svg" inline />
-            </div>
-            {{for page of search.pages("type=toplevel")}}
-            <a class=" text-black dark:text-white {{if page.nav_label == page_name}} underline {{else}} no-underline {{/if}}" href="{{page.url}}">{{page.nav_label}}</a>
-            {{/for}}
+<nav class=" bg-slate-800 flex justify-center text-white">
+	<div
+		class="container mx-auto 2xl:px-72 xl:px-60 lg:px-48 md:px-36 sm:px-20 px-4 flex justify-between items-center py-4">
+		<div class="flex items-center">
+			{{if !isHome}}
+			<img alt="Jyodann's Profile Picture" width="32" height="32" src="/assets/img/favicon.png"
+				transform-images="avif webp png 64">
+			{{/if}}
+			<a class="text-2xl font-bold px-2 no-underline text-white" href="/">Jyodann</a>
+		</div>
+		<div class="flex gap-4">
+			{{for page of search.pages("type=toplevel")}}
+			<a class="  text-white {{if page.nav_label == page_name}} underline {{else}} no-underline {{/if}}"
+				href="{{page.url}}">{{page.nav_label}}</a>
+			{{/for}}
 
-        </div>
-    </div>
+		</div>
+	</div>
 </nav>

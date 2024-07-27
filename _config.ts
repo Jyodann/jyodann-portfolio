@@ -16,39 +16,41 @@ import { path } from "https://deno.land/x/vento@v0.10.2/deps.ts";
 import { expandGlob, expandGlobSync } from "lume/deps/fs.ts";
 import FS from "lume/core/fs.ts";
 
-const site = lume(
-    {
-        src: "./src",
-        dest: "./output",
-        location: new URL("https://jyodann.com")
-    }
-);
+const site = lume({
+  src: "./src",
+  dest: "./output",
+  location: new URL("https://jyodann.com"),
+});
 
-site.use(feed({
+site.use(
+  feed({
     output: ["/posts.rss"],
     query: "blog",
     info: {
-        title: "=site.title",
-        description: "=site.description",
+      title: "=site.title",
+      description: "=site.description",
     },
     items: {
-        title: "=title",
-        description: "=description",
+      title: "=title",
+      description: "=description",
     },
-}));
+  })
+);
 
-site.use(feed({
+site.use(
+  feed({
     output: ["/projects.rss"],
     query: "project",
     info: {
-        title: "=site.title",
-        description: "=site.description",
+      title: "=site.title",
+      description: "=site.description",
     },
     items: {
-        title: "=title",
-        description: "=description",
+      title: "=title",
+      description: "=description",
     },
-}));
+  })
+);
 
 // Optimize and transform imgs:
 site.use(picture());
@@ -58,19 +60,20 @@ site.use(transformImages());
 site.use(inline());
 
 // Tailwind Implmentation
-site.use(tailwindcss({
+site.use(
+  tailwindcss({
     options: {
-        darkMode: 'selector',
-        theme: {
-            extend: {
-                fontFamily: {
-                    outfit: ['Outfit', 'sans-serif'],
-                },
-            }
-        }
-    }
-}
-));
+      darkMode: "selector",
+      theme: {
+        extend: {
+          fontFamily: {
+            outfit: ["Outfit", "sans-serif"],
+          },
+        },
+      },
+    },
+  })
+);
 
 // Required by Tailwind
 site.use(postcss());
@@ -82,11 +85,11 @@ site.use(lightningCss());
 site.use(metas());
 
 // Favicon:
-site.use(favicon(
-    {
-        input: "./assets/img/favicon.png"
-    }
-));
+site.use(
+  favicon({
+    input: "./assets/img/favicon.png",
+  })
+);
 
 // Reading Length:
 site.use(readInfo());
@@ -95,25 +98,24 @@ site.use(readInfo());
 site.use(terser(/* Options */));
 
 // Robots.txt
-site.use(robots({
+site.use(
+  robots({
     allow: ["Googlebot", "Bingbot"],
-}));
+  })
+);
 
-// Copy Images
-site.process([".rss"], (pages) => {
-    console.log(pages)
-});
+site.copy("/assets/svg/hello.svg");
 
 site.addEventListener("afterBuild", async (updates) => {
-    console.log("Build Finished");
-    console.log(Deno.cwd())
-    const glob = await expandGlob("./output/*.rss", {
-        root: Deno.cwd()
-    })
-    for await (const filePath of glob) {
-        let fileContents = await Deno.readTextFile(filePath.path)
-        fileContents = fileContents.replaceAll(".png", "-1000w.webp")
-        await Deno.writeTextFile(filePath.path, fileContents)
-    }
-})
+  console.log("Build Finished");
+  console.log(Deno.cwd());
+  const glob = await expandGlob("./output/*.rss", {
+    root: Deno.cwd(),
+  });
+  for await (const filePath of glob) {
+    let fileContents = await Deno.readTextFile(filePath.path);
+    fileContents = fileContents.replaceAll(".png", "-1000w.webp");
+    await Deno.writeTextFile(filePath.path, fileContents);
+  }
+});
 export default site;
