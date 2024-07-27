@@ -3,27 +3,27 @@ isHome: false
 links:
   - name: github
     url: https://github.com/jyodann
-  - name: itch
+  - name: itchio
     url: https://jyodann.itch.io/
   - name: youtube
-    url: 'https://www.youtube.com/@Jyodann'
+    url: "https://www.youtube.com/@Jyodann"
   - name: email
-    url: 'mailto:hello@jyodann.com'
+    url: "mailto:hello@jyodann.com"
   - name: telegram
     url: https://t.me/Jyodann
 contacts:
-- name: email
-  url: mailto:hello@jyodann.com
-- name: telegram
-  url: https://t.me/Jyodann
-  
+  - name: email
+    url: mailto:hello@jyodann.com
+  - name: telegram
+    url: https://t.me/Jyodann
+
 achievements:
-- name: Medallion of Excellence 🎖️ - ITSSB Skill - WorldSkills Competition 2022 Special Edition
-  url: https://worldskills2022se.com/skills/it-software-solutions-business/index.html#results
-- name: Gold Medalist 🥇 - ITSSB Skill - WorldSkills Singapore 2020
-  url: https://www.worldskills.sg/skills/all-champions/-/temasek-polytechnic/it-software-solutions-for-business/gold-award/
-- name: PolyFintech100 API Hackaton 2020 - 2nd Place
-  url: https://www.linkedin.com/pulse/polyfintech-100-hackathon-2020-meet-team-agile-tp-the-sandbox/
+  - name: Medallion of Excellence 🎖️ - ITSSB Skill - WorldSkills Competition 2022 Special Edition
+    url: https://worldskills2022se.com/skills/it-software-solutions-business/index.html#results
+  - name: Gold Medalist 🥇 - ITSSB Skill - WorldSkills Singapore 2020
+    url: https://www.worldskills.sg/skills/all-champions/-/temasek-polytechnic/it-software-solutions-for-business/gold-award/
+  - name: PolyFintech100 API Hackaton 2020 - 2nd Place
+    url: https://www.linkedin.com/pulse/polyfintech-100-hackathon-2020-meet-team-agile-tp-the-sandbox/
 
 metas:
   site: Jyodann's Website
@@ -32,4 +32,3 @@ metas:
   generator: true
   title: "=title"
   description: "=description"
- 

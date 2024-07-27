@@ -7,25 +7,28 @@ css_dependents: ["styles.css"]
 <html class="dark" lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | Jyodann</title>
-  {{for css of css_dependents}}
-  <link rel="stylesheet" href="/assets/styles/{{css}}">
-  {{/for}}
-  <script defer src="/assets/code/new_theme_switcher.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }} | Jyodann</title>
+	{{for css of css_dependents}}
+	<link rel="stylesheet" href="/assets/styles/{{css}}">
+	{{/for}}
+	<script defer src="/assets/code/new_theme_switcher.js"></script>
 </head>
 
-<body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
 
-  <body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
-    {{ comp.navigation_bar({ isHome: isHome, page_name: basename})}}
-    <div class="flex flex-grow justify-center">
-      <div class="container mx-auto 2xl:px-72 xl:px-60 lg:px-48 md:px-36 sm:px-20 px-4">
-        {{ content }}
-      </div>
-    </div>
-    {{ comp.footer() }}
+<body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
+	{{ if !isHome }}
+	{{ comp.navigation_bar({ isHome: isHome, page_name: basename})}}
+	{{ /if }}
+
+	<div class="flex flex-grow justify-center bg-repeat bg-[length:35%] "
+		style="background-image: url(/assets/svg/hello.svg);">
+		<div class="container mx-auto 2xl:px-72 xl:px-60 lg:px-48 md:px-36 sm:px-20">
+			{{ content }}
+		</div>
+	</div>
+	{{ comp.footer() }}
 </body>
 
 </html>

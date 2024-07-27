@@ -1,47 +1,58 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @tailwind base;
+
 @layer base {
-  h1 {
-    @apply text-4xl;
-    @apply font-bold;
-    @apply block;
-    @apply py-2;
-  }
-  h2 {
-    @apply text-2xl;
-  }
-  h3 {
-    @apply text-xl;
-  }
+	h1 {
+		@apply text-4xl;
+		@apply font-bold;
+		@apply block;
+		@apply py-2;
+	}
 
-  p {
-    @apply py-1;
-    @apply text-justify;
-  }
+	h2 {
+		@apply text-2xl;
+	}
 
-  a {
-    @apply text-black;
-    @apply dark:text-white underline;
-  }
+	h3 {
+		@apply text-xl;
+	}
 
-  li {
-    @apply list-item list-inside 
-  }
+	p {
+		@apply py-1;
+		@apply text-justify;
+	}
 
-  ul {
-    @apply list-disc; 
-  }
+	a {
+		@apply text-black;
+		@apply dark:text-white underline;
+	}
+
+	li {
+		@apply list-item list-inside
+	}
+
+	ul {
+		@apply list-disc;
+	}
 }
 
 blockquote p {
-  @apply p-4 bg-yellow-100 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-slate-800
+	@apply p-4 bg-yellow-100 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-slate-800
 }
 
 blockquote {
-  @apply py-2
+	@apply py-2
 }
 
+@keyframes pan {
+	0% {
+		transform: 0% 0%;
+	}
+
+	100% {
+		transform: 100% 0%;
+	}
+}
 
 @tailwind components;
 @tailwind utilities;
