@@ -11,13 +11,13 @@ description: Projects that I have done over the years.
 
 <div>here are some projects i've worked on over the years</div>
 <div class="py-4">
-    {{ for year of Object.keys(groups).reverse()}}
-    <p class="text-4xl font-semibold text-gray-600 dark:text-gray-200"> {{year}} </p>
-    <div class="h-1 bg-gray-600 dark:bg-gray-200 mb-4"></div>
-    <div class="flex flex-col gap-4">
-        {{for project of groups[year]}}
-        {{ comp.card_blog({project: project})}}
-        {{ /for }}
-    </div>
-    {{ /for }}
+	{{ for year of Object.keys(groups).reverse()}}
+	<p class="text-4xl font-semibold text-gray-600 text-gray-200"> {{year}} </p>
+	<div class="h-1 bg-gray-600 bg-gray-200 mb-4"></div>
+	<div class="flex flex-col gap-4">
+		{{for project of groups[year]}}
+		{{ comp.card_blog({project: project})}}
+		{{ /for }}
+	</div>
+	{{ /for }}
 </div>

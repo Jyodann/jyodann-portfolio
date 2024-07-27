@@ -60,7 +60,7 @@
 			{{ /for }}
 		</div>
 
-		<a href="/projects" class="w-full dark:bg-slate-800 py-4 rounded-lg no-underline text-center bg-yellow-200">See
+		<a href="/projects" class="w-full bg-slate-800 py-4 rounded-lg no-underline text-center ">See
 			All
 			Projects</a>
 

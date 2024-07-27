@@ -19,29 +19,29 @@ project_status:
 	<p class="text-2xl"> {{description}} </p>
 	<div class="pt-2 w-full">
 		<table
-			class="w-full text-center table table-fixed bg-yellow-200 dark:bg-slate-800 border border-collapse border-black dark:border-white ">
-			<thead class="border border-black dark:border-white ">
+			class="w-full text-center table table-fixed  bg-slate-800 border border-collapse border-black border-white ">
+			<thead class="border border-black border-white ">
 				<tr class="font-bold">
-					<td class="border border-black dark:border-white  w-1/4">Key 🔑</td>
-					<td class="border border-black dark:border-white ">Value </td>
+					<td class="border border-black border-white  w-1/4">Key 🔑</td>
+					<td class="border border-black border-white ">Value </td>
 				</tr>
 			</thead>
-			<tbody class="bg-yellow-100 dark:bg-slate-700">
+			<tbody class="bg-yellow-100 bg-slate-700">
 				<tr class="table-row">
-					<td class="border border-black dark:border-white py-2">Project Status</td>
-					<td class="border border-black dark:border-white p-2">
+					<td class="border border-black border-white py-2">Project Status</td>
+					<td class="border border-black border-white p-2">
 						{{ project_status }}
 					</td>
 				</tr>
 				<tr class="table-row">
 					<td class="py-2">Date</td>
-					<td class="border border-black dark:border-white p-2">
+					<td class="border border-black border-white p-2">
 						{{date.toLocaleDateString("en-GB")}}
 					</td>
 				</tr>
 				<tr class="table-row">
-					<td class="border border-black dark:border-white ">Built with</td>
-					<td class="border border-black dark:border-white ">
+					<td class="border border-black border-white ">Built with</td>
+					<td class="border border-black border-white ">
 						<div
 							class="flex align-middle content-center place-content-center items-center gap-x-4 w-full h-full p-2">
 
@@ -57,8 +57,8 @@ project_status:
 					</td>
 				</tr>
 				<tr>
-					<td class="border border-black dark:border-white ">Quick Links</td>
-					<td class="border border-black dark:border-white ">
+					<td class="border border-black border-white ">Quick Links</td>
+					<td class="border border-black border-white ">
 						<ul>
 							{{ for link of quick_links}}
 							<li class="py-2"> <a target="_blank" href="{{link.url}}">{{link.name}}</a> </li>

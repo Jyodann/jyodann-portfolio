@@ -17,10 +17,9 @@ css_dependents: ["styles.css"]
 </head>
 
 
-<body class="font-outfit bg-yellow-50 dark:bg-slate-600 dark:text-white flex flex-col h-screen">
-	{{ if !isHome }}
+<body class="font-outfit  bg-slate-600 text-white flex flex-col h-screen">
+
 	{{ comp.navigation_bar({ isHome: isHome, page_name: basename})}}
-	{{ /if }}
 
 	<div class="flex flex-grow justify-center bg-repeat bg-[length:35%] "
 		style="background-image: url(/assets/svg/hello.svg);">

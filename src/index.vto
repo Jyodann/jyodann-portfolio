@@ -8,8 +8,8 @@ thumbnail: "/assets/img/home_page_thumbnail.png"
 description: "Home Page of Jyodann's Website"
 ---
 
-<div>
-	<div class="h-svh flex flex-col items-center justify-evenly">
+<div class="mx-2">
+	<div class="h-[calc(100vh-64px)] flex flex-col items-center justify-evenly">
 
 		<div class="flex flex-col items-center basis-[85%] justify-center">
 			<img src="/assets/img/logo.png" height="256" width="256" transform-images="avif webp jpg 512"
@@ -23,8 +23,7 @@ description: "Home Page of Jyodann's Website"
 			<div class="flex gap-x-4 text-xl py-4">
 				{{for link of links}}
 				<a target="_blank" href="{{link.url}}">
-					<img class="fill-black dark:fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg"
-						inline>
+					<img class="fill-black fill-white" height="48" src="/assets/svg/social/{{link.name}}.svg" inline>
 				</a>
 
 				{{ /for }}
@@ -42,7 +41,7 @@ description: "Home Page of Jyodann's Website"
 	<div class="flex flex-col items-center">
 		<p id="about" class="text-4xl text-center">about me:</p>
 		<div class="flex flex-col">
-			<div class="text-justify flex flex-col gap-2 mx-2 text-lg">
+			<div class="text-justify flex flex-col gap-2 text-lg">
 				<p>Hi there, I'm Jordan Khong, a software and game developer from Singapore.
 					I enjoy creating small tools that entertain and sometimes help people;
 					I primarily use Godot and Unity with C# as my go-to tools and language,
@@ -102,8 +101,7 @@ description: "Home Page of Jyodann's Website"
 				{{ /for }}
 			</div>
 
-			<a href="/projects"
-				class="w-full dark:bg-slate-800 py-4 rounded-lg no-underline text-center bg-yellow-200">See
+			<a href="/projects" class="w-full bg-slate-800 py-4 rounded-lg no-underline text-center ">See
 				All
 				Projects</a>
 
