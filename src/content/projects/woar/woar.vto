@@ -1,0 +1,38 @@
+---
+layout: post.vto
+thumbnail: 'woar.png'
+title: WOAR? (Windows on ARM Ready?)
+date: '2024-08-06'
+quick_links:
+  - name: Visit the web app
+    url: https://woar.jyodann.com
+  - name: Visit the GitHub Page
+    url: https://github.com/Jyodann/woar
+description: A small tool to help you determine if your favourite software is ready for Windows on ARM
+built_with: [deno, lume, sqlite, python]
+basename: "."
+templateEngine: ['vto', 'md']
+project_status: Complete 
+---
+
+WOAR? is a web application that contains information about whether an application provides an ARM/ARM64 version of
+an application that can run natively on the new Windows on ARM / CoPilot+ PCs. It does this by scraping the [Winget Package Directory](https://github.com/microsoft/winget-pkgs)
+from Microsoft. 
+
+It uses Python to first parse and build an SQLite database, which gets read by Deno and builds a Lume static site 
+containing all the information about the application's ARM / ARM64 offerings. Since information is given by the 
+developer, it may not guarentee complete compatibility. 
+
+For updating the page, it uses Github Actions, which pulls the latest repository information, builds the site and releases
+the SQLite database every 12 hours. You can check it out [here](https://github.com/Jyodann/woar)
+
+
+# Motivation
+
+This project was made as I needed a way to easily check current application compatibility with ARM as I was looking
+to purchase a ARM laptop for Windows. It has sadly proven that Microsoft isn't really very serious about pushing
+for ARM adoption, with the poor support for developers to port their applications, and bad marketing efforts 
+to push these devices. 
+
+However, I still hope that this project can help to allay fears for people to choose ARM on Windows, as it certainly 
+does have its benefits. You can check out the tool [here](https://woar.jyodann.com)
